@@ -10,10 +10,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161122153606) do
+ActiveRecord::Schema.define(version: 20161122154947) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bets", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "user_id"
+    t.integer  "category_id"
+    t.datetime "finish_at"
+    t.string   "proof"
+    t.string   "challenge_title"
+    t.text     "challenge"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["category_id"], name: "index_bets_on_category_id", using: :btree
+    t.index ["user_id"], name: "index_bets_on_user_id", using: :btree
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "choices", force: :cascade do |t|
+    t.string   "title"
+    t.boolean  "winning"
+    t.integer  "bet_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bet_id"], name: "index_choices_on_bet_id", using: :btree
+  end
+
+  create_table "user_choices", force: :cascade do |t|
+    t.integer  "bet_amount"
+    t.integer  "user_id"
+    t.integer  "choice_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["choice_id"], name: "index_user_choices_on_choice_id", using: :btree
+    t.index ["user_id"], name: "index_user_choices_on_user_id", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -28,8 +68,19 @@ ActiveRecord::Schema.define(version: 20161122153606) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "user_name"
+    t.date     "birthdate"
+    t.integer  "starting_amount"
+    t.integer  "rank"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "bets", "categories"
+  add_foreign_key "bets", "users"
+  add_foreign_key "choices", "bets"
+  add_foreign_key "user_choices", "choices"
+  add_foreign_key "user_choices", "users"
 end
