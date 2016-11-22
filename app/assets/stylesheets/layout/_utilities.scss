@@ -10,6 +10,18 @@
   padding-bottom: 5em;
 }
 
+.padded-top {
+  padding-top: 6em;
+}
+
+.padded-bottom {
+  padding-bottom: 6em;
+}
+
+.block-align {
+  text-align: center;
+}
+
 // Backgrounds
 .bg-black {
   background: #4a4a4a;
@@ -22,4 +34,9 @@
 }
 .bg-dark-blue {
   background: #3b5998;
+}
+
+.paddedform {
+  padding-top: 20px;
+  text-decoration: none;
 }
