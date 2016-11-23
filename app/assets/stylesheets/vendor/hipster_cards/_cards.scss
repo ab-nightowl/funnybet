@@ -15,7 +15,7 @@
     background-color: #F3AC3C;
     margin-bottom: 20px;
     position: relative;
-
+    height: 350px;
     max-width: 350px;
     margin-left: auto;
     margin-right: auto;
@@ -474,4 +474,14 @@
         }
     }
 }
-
+.card-social {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.card-content {
+  flex-direction: column;
+  justify-content: space-around;
+  display: flex;
+  height: 300px;
+}
