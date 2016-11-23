@@ -47,7 +47,40 @@
 
 
 
-.circle {
+.circle1 {
+  display: inline-block;
+  width: 34px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 16px;
+  background-color: $orange;
+  color: white;
+  // font-family: $special-font;
+  line-height: 1.4;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  margin-top: 48px;
+}
+
+.circle2 {
+  display: inline-block;
+  width: 34px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 16px;
+  background-color: $orange;
+  color: white;
+  // font-family: $special-font;
+  line-height: 1.4;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  margin-top: 25px;
+}
+.circle3 {
   display: inline-block;
   width: 34px;
   text-align: center;
@@ -62,7 +95,22 @@
   border-radius: 50%;
   margin-bottom: 20px;
 }
-
+.circle4 {
+  display: inline-block;
+  width: 34px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 16px;
+  background-color: $orange;
+  color: white;
+  // font-family: $special-font;
+  line-height: 1.4;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  margin-top: 25px;
+}
 .btn-homepage {
  margin: 2em;
  width: 150px;
