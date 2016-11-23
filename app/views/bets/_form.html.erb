@@ -1,0 +1,23 @@
+<h1>Add Your Bets</h1>
+<%= simple_form_for(@bet) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :finish_at %>
+  <%= f.input :category %>
+  <%= f.input :challenge_title %>
+  <%= f.input :challenge %>
+  <%= f.input :proof %>
+
+  <%= f.submit class: "btn btn-danger"%>
+
+<% end %>
+
+
+<!--title
+description
+user_id
+category_id
+finish_at
+proof
+challenge_title
+challenge
