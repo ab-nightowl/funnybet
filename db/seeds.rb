@@ -1,4 +1,3 @@
-puts "Starting seed"
 
 User.destroy_all
 Category.destroy_all
@@ -6,7 +5,6 @@ Bet.destroy_all
 Choice.destroy_all
 UserChoice.destroy_all
 
-puts "Destroy_all"
 
 Faker::Config.locale = 'fr'
 
@@ -24,7 +22,6 @@ users = []
   )
 end
 
-puts "Creating users"
 
 categories_names = [
   "Politique",
@@ -40,7 +37,6 @@ categories_names.each do |category|
   Category.create!(name: category)
 end
 
-puts "Creating categories"
 
 ongoing_bets = [
   Bet.create!(
@@ -101,7 +97,6 @@ ongoing_bets = [
   )
 ]
 
-puts "Creating ongoing_bets"
 
 played_bets = [
   Bet.create!(
@@ -130,7 +125,6 @@ played_bets = [
   # )
 ]
 
-puts "Creating played_bets"
 
 choices_of_bet1 = [
   Choice.create!(
@@ -293,7 +287,6 @@ choices_of_bet9 = [
 #     )
 # ]
 
-puts "Creating choices"
 
 users.each do |user|
   uc = UserChoice.create!(
@@ -375,6 +368,4 @@ end
 
 #   user.user_choices << uc
 # end
-
-puts "Creating user_choices"
 
