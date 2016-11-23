@@ -15,7 +15,7 @@
   position: fixed;
   left: 0px;
   top: 0px;
-  z-index: 1;
+  z-index: 10;
   width: 100%;
 }
 
@@ -63,6 +63,23 @@
   background: $orange;
 
 }
+
+.navbar-wagon-button-banner {
+  margin-left: 10px;
+  padding: 15px 20px;
+  border-radius: 5px;
+  line-height: 40px;
+  background-color: $blue;
+  color: white;
+  font-size: 17 px;
+}
+.navbar-wagon-button-banner:hover {
+  color: white;
+  background: $orange;
+
+}
+
+
 
 /* Navbar search form */
 .navbar-wagon-search {
