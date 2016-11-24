@@ -2,7 +2,6 @@
   text-align: center;
   padding: 5px;
   color: white;
-
 }
 
 .description {
@@ -59,10 +58,7 @@
         box-shadow: none;
     }
 
-    .btn{
-        text-shadow: none;
-        font-weight: bold;
-    }
+
 
     .title-uppercase{
         text-transform: uppercase;
@@ -203,27 +199,6 @@
         @include opacity(0);
     }
 
-    .header .actions{
-        background-color: transparent;
-        z-index: 3;
-
-        .btn{
-            @include vertical-align();
-        }
-    }
-
-    &:hover{
-        .filter{
-            @include opacity(.7);
-        }
-
-        .header .social-line,
-        .header .actions{
-            @include opacity(1);
-        }
-    }
-
-    .category,
     .label{
         font-size: $font-size-base;
         margin-bottom: 0px;
@@ -296,22 +271,7 @@
         position: absolute;
     }
 
-    .icon{
-        display: block;
-        margin: 0 auto;
-        top: 50%;
-        position: relative;
-        transform: translateY(-50%);
-        -webkit-transform: translateY(-50%);
-        text-align: center;
 
-        i{
-            font-size: 60px;
-            border: 2px solid rgba(0,0,0, 0.3);
-            padding: 18px;
-            border-radius: 50%;
-        }
-    }
 
     .col-lg-4 &{
         .icon{

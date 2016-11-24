@@ -113,9 +113,23 @@
   margin-bottom: 20px;
   margin-top: 25px;
 }
-.btn-homepage {
- margin: 2em;
- width: 150px;
+.btn-voirplus {
+  margin-left: 10px;
+  padding: 0 20px;
+  border-radius: 5px;
+  line-height: 40px;
+  color: white;
+  background-color: $blue;
+  font-size: 14px;
+}
+
+.btn-voirplus:hover {
+  background: $orange;
+}
+.navbar-wagon-button:hover {
+  color: white;
+  background: $orange;
+
 }
 
 
