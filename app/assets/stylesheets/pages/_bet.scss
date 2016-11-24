@@ -1,0 +1,66 @@
+
+
+.body-bet{
+  background-color: #e3e7ef;
+  color: black;
+  height: 100%;
+}
+
+.bet_button{
+  padding: 15px 20px;
+  margin: 5px;
+}
+
+.description_background{
+  background: white;
+  min-height: 300px;
+  margin-bottom: 10px;
+  border-top: 3px solid #F3AC3C;
+}
+
+.challenge_background{
+  background: white;
+  min-height: 200px;
+  margin-bottom: 10px;
+  border-top: 3px solid #F3AC3C;
+}
+
+.bet_amount_background{
+  background-color: white;
+  min-height: 100px;
+  padding: 15px;
+  border-top: 3px solid #F3AC3C;
+}
+
+
+.deadline{
+  background-color: white;
+  margin-bottom: 10px;
+}
+
+.beters-container{
+  background-color: white;
+  box-shadow: 5px 3px 5px lightgrey;
+  display: flex;
+  flex-direction: column;
+  min-height: 900px;
+  color: black;
+}
+
+.margin_avatar{
+  margin: 5px;
+}
+
+
+.flex_odd{
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  min-height: 100px;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-top: 3px solid #F3AC3C;
+
+}
+
