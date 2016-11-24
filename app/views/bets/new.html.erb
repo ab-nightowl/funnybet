@@ -15,6 +15,7 @@
 
       </div>
     </div>
+
     <div class="col-xs-9">
       <div class="row text-center description_background padded-text">
         <%= simple_form_for @bet do |f| %>
@@ -22,24 +23,15 @@
           <%= f.input :description, label: "Pour plus de détails (si tu veux)" %>
         <% end %>
       </div>
-      <div class="row text-center challenge_background padded-text">
-        <%= simple_form_for @bet do |f| %>
-          <%= f.input :challenge_title, label: "Donne une indication sur le gage pour le(s) perdant(s) ;)" %>
-          <%= f.input :challenge, label: "C'est quoi ton gage ?" %>
-        <% end %>
-      </div>
-      <div class="row text-center">
-        <div class="deadline padded-text">
-        <strong><p><%= @bet.finish_at %></p></strong>
-        <%= simple_form_for @bet do |f| %>
-          <%= f.input :finish_at, label: "Donne une date de cloture du pari" %>
-        <% end %>
-        </div>
-      </div>
-      <div class="row text-center text-align">
-        <div class="flex_odd padded-text">
-          <%= simple_form_for @choice do |f| %>
-            <%= f.input :title %>
+
+      <div class="row text-center choices_background padded-text">
+          <p><strong>Choix de réponses :</strong></p>
+
+          <div>
+            <%= simple_form_for @bet do |b| %>
+              <%= b.simple_fields_for :choices  do |c| %>
+                <%= c.input :title %>
+              <% end %>
           <% end %>
 
           <!-- <div>
@@ -54,11 +46,28 @@
             <p><%= link_to "NON", "#", class: "btn btn-default bet_button" %></p>
             <p>cote3</p>
           </div> -->
-        </div>
+          </div>
+
       </div>
+
       <div class="row bet_amount_background padded-text">
         <div>
           <p>Lache ton fric :</p>
+        </div>
+      </div>
+
+      <div class="row text-center challenge_background padded-text">
+        <%= simple_form_for @bet do |f| %>
+          <%= f.input :challenge_title, label: "Donne une indication sur le gage pour le(s) perdant(s) ;)" %>
+          <%= f.input :challenge, label: "C'est quoi ton gage ?" %>
+        <% end %>
+      </div>
+      <div class="row text-center">
+        <div class="deadline padded-text">
+        <strong><p><%= @bet.finish_at %></p></strong>
+        <%= simple_form_for @bet do |f| %>
+          <%= f.input :finish_at, label: "Donne une date de cloture du pari" %>
+        <% end %>
         </div>
       </div>
 

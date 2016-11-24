@@ -11,13 +11,11 @@ class BetsController < ApplicationController
 
   def new
     @bet = Bet.new
-    @choice = Choice.new
   end
 
   def create
     @bet = current_user.bets.new(bet_params)
-    @choice = current_user.bets.choices.new(choice_params)
-    if @bet.save && @choice.save
+    if @bet.save
       flash[:notice] = "Ton pari a été créé"
       redirect_to bet_path(@bet)
     else
