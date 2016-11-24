@@ -1,0 +1,56 @@
+<div class="wrapper body-bet">
+  <div class="container padded">
+    <div class="col-xs-3 text-center">
+      <div class="beters-container">
+       <h4>Parieur</h4>
+        <div class="margin_avatar">
+          <%= image_tag 'logo.png', class: "avatar-medium center-block" %>
+          <br>
+          <%= image_tag 'logo.png', class: "avatar-medium center-block" %>
+          <br>
+          <%= image_tag 'logo.png', class: "avatar-medium center-block" %>
+          <br>
+
+        </div>
+
+      </div>
+    </div>
+    <div class="col-xs-9">
+      <div class="row text-center description_background padded-text">
+        <h2><%= @bet.title %></h2>
+        <p><%= @bet.description %></p>
+      </div>
+      <div class="row text-center challenge_background padded-text">
+         <h3><%= @bet.challenge_title %></h3>
+         <p><%= @bet.challenge %></p>
+      </div>
+      <div class="row text-center">
+        <div class="deadline padded-text">
+        <strong><p><%= @bet.finish_at %></p></strong>
+        </div>
+      </div>
+      <div class="row text-center text-align">
+        <div class="flex_odd padded-text">
+          <div>
+            <p><%= link_to "OUI", "#", class: "btn btn-default bet_button" %></p>
+            <p>cote1</p>
+          </div>
+          <div>
+            <p><%= link_to "NUL", "#", class: "btn btn-default bet_button" %></p>
+            <p>cote2</p>
+          </div>
+          <div>
+            <p><%= link_to "NON", "#", class: "btn btn-default bet_button" %></p>
+            <p>cote3</p>
+          </div>
+        </div>
+      </div>
+      <div class="row bet_amount_background padded-text">
+        <div>
+          <p>Lache ton fric :</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
