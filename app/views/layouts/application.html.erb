@@ -12,7 +12,11 @@
 
   </head>
   <body>
+    <% if current_user %>
+    <%= render 'shared/navbar_logged' %>
+    <% else %>
     <%= render 'shared/navbar' %>
+    <% end %>
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= render "shared/footer" %>
