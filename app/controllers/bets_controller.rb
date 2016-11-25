@@ -1,5 +1,5 @@
 class BetsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:show]
+  skip_before_action :authenticate_user!, only: [:show, :index]
   before_action :find_bet, only: [:show]
 
   def index
