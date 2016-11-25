@@ -16,20 +16,20 @@
       </div>
     </div>
     <div class="col-xs-9">
-      <div class="row text-center description_background padded-text">
+      <div class="row row-margin text-center description_background padded-text">
         <h2><%= @bet.title %></h2>
         <p><%= @bet.description %></p>
       </div>
-      <div class="row text-center challenge_background padded-text">
+      <div class="row row-margin text-center challenge_background padded-text">
          <h3><%= @bet.challenge_title %></h3>
          <p><%= @bet.challenge %></p>
       </div>
-      <div class="row text-center">
+      <div class="row row-margin text-center">
         <div class="deadline padded-text">
         <strong><p><%= @bet.finish_at %></p></strong>
         </div>
       </div>
-      <div class="row text-center text-align">
+      <div class="row row-margin text-center text-align">
         <div class="flex_odd padded-text">
           <div>
             <p><%= link_to "OUI", "#", class: "btn btn-default bet_button" %></p>
@@ -45,8 +45,8 @@
           </div>
         </div>
       </div>
-      <div class="row bet_amount_background padded-text">
-        <div>
+      <div class="row bet_amount_background ">
+        <div class="padded-text">
           <p>Lache ton fric :</p>
         </div>
       </div>
