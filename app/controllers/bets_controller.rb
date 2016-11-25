@@ -11,6 +11,7 @@ class BetsController < ApplicationController
 
   def new
     @bet = Bet.new
+    @bet.choices << Choice.new << Choice.new
   end
 
   def create

@@ -17,59 +17,64 @@
     </div>
 
     <div class="col-xs-9">
-      <div class="row text-center description_background padded-text">
-        <%= simple_form_for @bet do |f| %>
-          <%= f.input :title, label: "Donne un titre à ton pari" %>
-          <%= f.input :description, label: "Pour plus de détails (si tu veux)" %>
-        <% end %>
-      </div>
+      <%= simple_form_for @bet do |f| %>
 
-      <div class="row text-center choices_background padded-text">
-          <p><strong>Choix de réponses :</strong></p>
+        <div class="row row-margin description_background">
+          <div class="form-inputs text-decoration text-center padded-text">
+            <%= f.input :title, label: "Donne un titre à ton pari" %>
+            <%= f.input :description, label: "Pour plus de détails (si tu veux)" %>
+          </div>
+        </div>
 
-          <div>
-            <%= simple_form_for @bet do |b| %>
-              <%= b.simple_fields_for :choices  do |c| %>
-                <%= c.input :title %>
+        <div class="row row-margin choices-background">
+          <div class="text-center padded-text">
+            <p><strong>Choix de réponses :</strong></p>
+
+            <div>
+              <% if @bet.errors.messages[:choices].any? %>
+                <div class="text-danger text-center">
+                  <%= @bet.errors.messages[:choices].join(', ') %>
+                </div>
               <% end %>
-          <% end %>
 
-          <!-- <div>
-            <p><%= link_to "OUI", "#", class: "btn btn-default bet_button" %></p>
-            <p>cote1</p>
-          </div>
-          <div>
-            <p><%= link_to "NUL", "#", class: "btn btn-default bet_button" %></p>
-            <p>cote2</p>
-          </div>
-          <div>
-            <p><%= link_to "NON", "#", class: "btn btn-default bet_button" %></p>
-            <p>cote3</p>
-          </div> -->
+              <div class="form-inputs text-decoration" id="choices">
+                <%= f.simple_fields_for :choices do |choice| %>
+                  <%= render 'choice_fields', f: choice %>
+                <% end %>
+
+                <div class="links">
+                  <%= link_to_add_association 'Ajouter une réponse', f, :choices %>
+                </div>
+              </div>
+            </div>
+
           </div>
 
-      </div>
-
-      <div class="row bet_amount_background padded-text">
-        <div>
-          <p>Lache ton fric :</p>
         </div>
-      </div>
 
-      <div class="row text-center challenge_background padded-text">
-        <%= simple_form_for @bet do |f| %>
-          <%= f.input :challenge_title, label: "Donne une indication sur le gage pour le(s) perdant(s) ;)" %>
-          <%= f.input :challenge, label: "C'est quoi ton gage ?" %>
-        <% end %>
-      </div>
-      <div class="row text-center">
-        <div class="deadline padded-text">
-        <strong><p><%= @bet.finish_at %></p></strong>
-        <%= simple_form_for @bet do |f| %>
-          <%= f.input :finish_at, label: "Donne une date de cloture du pari" %>
-        <% end %>
+        <div class="row row-margin bet_amount_background">
+          <div class="padded-text">
+            <p>Lache ton fric :</p>
+          </div>
         </div>
-      </div>
+
+        <div class="row row-margin challenge_background">
+          <div class="form-inputs text-decoration text-center padded-text">
+            <%= f.input :challenge_title, label: "Donne une indication sur le gage pour le(s) perdant(s) ;)" %>
+            <%= f.input :challenge, label: "C'est quoi ton gage ?" %>
+          </div>
+        </div>
+
+        <div class="row row-margin form-inputs">
+          <div class="deadline text-decoration text-center padded-text">
+            <strong><p><%= @bet.finish_at %></p></strong>
+            <div>
+              <%= f.input :finish_at, label: "Donne une date de cloture du pari" %>
+            </div>
+          </div>
+        </div>
+
+      <% end %>
 
     </div>
   </div>
