@@ -2,7 +2,8 @@
   <div class="banner-content">
     <h1>Pariez entre amis ! </h1>
     <p>Créez vos paris sur tout et n'importe quoi et invitez vos amis !</p>
-    <a class="navbar-wagon-button-banner">CRÉER UN PARI</a>
+
+    <%= link_to "CRÉER UN PARI", new_bet_path, { class: "banner-wagon-button" } %>
   </div>
 </div>
 
@@ -36,159 +37,163 @@
   </div>
 </div>
 
-  <div class="container mostpopular padded text-center">
-    <div class="row">
-      <h2>LES PLUS POPULAIRES</h2>
+<div class="container mostpopular padded text-center">
+  <div class="row">
+    <h2>LES PLUS POPULAIRES</h2>
 
-        <!-- start card -->
-        <div class="card-box col-md-4 col-sm-6">
-          <div class="card" data-color="orange" data-src="/hipster-as-f-cards/assets/img/music-3.jpg">
-            <div class="content card-content">
-              <h4 class="description"><%= Bet.all.find(1).title %></h4>
-              <div class="btn-center">
-                <button class="btn btn-neutral btn-fill btn-modern">Je parie</button>
-              </div>
-              <div class="filter"></div>
-            </div><!-- content -->
-            <div class="card-social social-line" data-buttons="3">
-              <button class="btn btn-social btn-facebook">
-                <i class="fa fa-facebook"></i>
-              </button>
-              <button class="btn btn-social btn-twitter">
-                <i class="fa fa-twitter"></i>
-              </button>
-              <button class="btn btn-social btn-pinterest">
-                <i class="fa fa-pinterest"></i>
-              </button>
-            </div><!-- social-line -->
-          </div><!-- card -->
-        </div>
-        <!-- end card -->
+      <!-- start card -->
+      <div class="card-box col-md-4 col-sm-6">
+        <div class="card" data-color="orange" data-src="/hipster-as-f-cards/assets/img/music-3.jpg">
+          <div class="content card-content">
+            <h4 class="description"><%= Bet.all.sample.title %></h4>
+            <div class="btn-center">
+              <button class="btn btn-neutral btn-fill btn-modern">Je parie</button>
+            </div>
+            <div class="filter"></div>
+          </div><!-- content -->
+          <div class="card-social social-line" data-buttons="3">
+            <button class="btn btn-social btn-facebook">
+              <i class="fa fa-facebook"></i>
+            </button>
+            <button class="btn btn-social btn-twitter">
+              <i class="fa fa-twitter"></i>
+            </button>
+            <button class="btn btn-social btn-pinterest">
+              <i class="fa fa-pinterest"></i>
+            </button>
+          </div><!-- social-line -->
+        </div><!-- card -->
+      </div>
+      <!-- end card -->
 
-        <!-- start card -->
-        <div class="card-box col-md-4 col-sm-6">
-          <div class="card" data-color="orange" data-src="/hipster-as-f-cards/assets/img/music-3.jpg">
-            <div class="content card-content">
-              <h4 class="description"><%= Bet.all.find(2).title %></h4>
-              <div class="btn-center">
-                <button class="btn btn-neutral btn-fill btn-modern">Je parie</button>
-              </div>
-              <div class="filter"></div>
-            </div><!-- content -->
-            <div class="card-social social-line" data-buttons="3">
-              <button class="btn btn-social btn-facebook">
-                <i class="fa fa-facebook"></i>
-              </button>
-              <button class="btn btn-social btn-twitter">
-                <i class="fa fa-twitter"></i>
-              </button>
-              <button class="btn btn-social btn-pinterest">
-                <i class="fa fa-pinterest"></i>
-              </button>
-            </div><!-- social-line -->
-          </div><!-- card -->
-        </div>
-        <!-- end card -->
+      <!-- start card -->
+      <div class="card-box col-md-4 col-sm-6">
+        <div class="card" data-color="orange" data-src="/hipster-as-f-cards/assets/img/music-3.jpg">
+          <div class="content card-content">
+            <h4 class="description"><%= Bet.all.sample.title %></h4>
+            <div class="btn-center">
+              <button class="btn btn-neutral btn-fill btn-modern">Je parie</button>
+            </div>
+            <div class="filter"></div>
+          </div><!-- content -->
+          <div class="card-social social-line" data-buttons="3">
+            <button class="btn btn-social btn-facebook">
+              <i class="fa fa-facebook"></i>
+            </button>
+            <button class="btn btn-social btn-twitter">
+              <i class="fa fa-twitter"></i>
+            </button>
+            <button class="btn btn-social btn-pinterest">
+              <i class="fa fa-pinterest"></i>
+            </button>
+          </div><!-- social-line -->
+        </div><!-- card -->
+      </div>
+      <!-- end card -->
 
-        <!-- start card -->
-        <div class="card-box col-md-4 col-sm-6">
-          <div class="card" data-color="orange" data-src="/hipster-as-f-cards/assets/img/music-3.jpg">
-            <div class="content card-content">
-              <h4 class="description"><%= Bet.all.find(3).title %></h4>
-              <div class="btn-center">
-                <button class="btn btn-neutral btn-fill btn-modern">Je parie</button>
-              </div>
-              <div class="filter"></div>
-            </div><!-- content -->
-            <div class="card-social social-line" data-buttons="3">
-              <button class="btn btn-social btn-facebook">
-                <i class="fa fa-facebook"></i>
-              </button>
-              <button class="btn btn-social btn-twitter">
-                <i class="fa fa-twitter"></i>
-              </button>
-              <button class="btn btn-social btn-pinterest">
-                <i class="fa fa-pinterest"></i>
-              </button>
-            </div><!-- social-line -->
-          </div><!-- card -->
-        </div>
-        <!-- end card -->
+      <!-- start card -->
+      <div class="card-box col-md-4 col-sm-6">
+        <div class="card" data-color="orange" data-src="/hipster-as-f-cards/assets/img/music-3.jpg">
+          <div class="content card-content">
+            <h4 class="description"><%= Bet.all.sample.title %></h4>
+            <div class="btn-center">
+              <button class="btn btn-neutral btn-fill btn-modern">Je parie</button>
+            </div>
+            <div class="filter"></div>
+          </div><!-- content -->
+          <div class="card-social social-line" data-buttons="3">
+            <button class="btn btn-social btn-facebook">
+              <i class="fa fa-facebook"></i>
+            </button>
+            <button class="btn btn-social btn-twitter">
+              <i class="fa fa-twitter"></i>
+            </button>
+            <button class="btn btn-social btn-pinterest">
+              <i class="fa fa-pinterest"></i>
+            </button>
+          </div><!-- social-line -->
+        </div><!-- card -->
+      </div>
+      <!-- end card -->
 
-        <!-- start card -->
-        <div class="card-box col-md-4 col-sm-6">
-          <div class="card" data-color="orange" data-src="/hipster-as-f-cards/assets/img/music-3.jpg">
-            <div class="content card-content">
-              <h4 class="description"><%= Bet.all.find(4).title %></h4>
-              <div class="btn-center">
-                <button class="btn btn-neutral btn-fill btn-modern">Je parie</button>
-              </div>
-              <div class="filter"></div>
-            </div><!-- content -->
-            <div class="card-social social-line" data-buttons="3">
-              <button class="btn btn-social btn-facebook">
-                <i class="fa fa-facebook"></i>
-              </button>
-              <button class="btn btn-social btn-twitter">
-                <i class="fa fa-twitter"></i>
-              </button>
-              <button class="btn btn-social btn-pinterest">
-                <i class="fa fa-pinterest"></i>
-              </button>
-            </div><!-- social-line -->
-          </div><!-- card -->
-        </div>
-        <!-- end card -->
+      <!-- start card -->
+      <div class="card-box col-md-4 col-sm-6">
+        <div class="card" data-color="orange" data-src="/hipster-as-f-cards/assets/img/music-3.jpg">
+          <div class="content card-content">
+            <h4 class="description"><%= Bet.all.sample.title %></h4>
+            <div class="btn-center">
+              <button class="btn btn-neutral btn-fill btn-modern">Je parie</button>
+            </div>
+            <div class="filter"></div>
+          </div><!-- content -->
+          <div class="card-social social-line" data-buttons="3">
+            <button class="btn btn-social btn-facebook">
+              <i class="fa fa-facebook"></i>
+            </button>
+            <button class="btn btn-social btn-twitter">
+              <i class="fa fa-twitter"></i>
+            </button>
+            <button class="btn btn-social btn-pinterest">
+              <i class="fa fa-pinterest"></i>
+            </button>
+          </div><!-- social-line -->
+        </div><!-- card -->
+      </div>
+      <!-- end card -->
 
-        <!-- start card -->
-        <div class="card-box col-md-4 col-sm-6">
-          <div class="card" data-color="orange" data-src="/hipster-as-f-cards/assets/img/music-3.jpg">
-            <div class="content card-content">
-              <h4 class="description"><%= Bet.all.find(5).title %></h4>
-              <div class="btn-center">
-                <button class="btn btn-neutral btn-fill btn-modern">Je parie</button>
-              </div>
-              <div class="filter"></div>
-            </div><!-- content -->
-            <div class="card-social social-line" data-buttons="3">
-              <button class="btn btn-social btn-facebook">
-                <i class="fa fa-facebook"></i>
-              </button>
-              <button class="btn btn-social btn-twitter">
-                <i class="fa fa-twitter"></i>
-              </button>
-              <button class="btn btn-social btn-pinterest">
-                <i class="fa fa-pinterest"></i>
-              </button>
-            </div><!-- social-line -->
-          </div><!-- card -->
-        </div>
-        <!-- end card -->
+      <!-- start card -->
+      <div class="card-box col-md-4 col-sm-6">
+        <div class="card" data-color="orange" data-src="/hipster-as-f-cards/assets/img/music-3.jpg">
+          <div class="content card-content">
+            <h4 class="description"><%= Bet.all.sample.title %></h4>
+            <div class="btn-center">
+              <button class="btn btn-neutral btn-fill btn-modern">Je parie</button>
+            </div>
+            <div class="filter"></div>
+          </div><!-- content -->
+          <div class="card-social social-line" data-buttons="3">
+            <button class="btn btn-social btn-facebook">
+              <i class="fa fa-facebook"></i>
+            </button>
+            <button class="btn btn-social btn-twitter">
+              <i class="fa fa-twitter"></i>
+            </button>
+            <button class="btn btn-social btn-pinterest">
+              <i class="fa fa-pinterest"></i>
+            </button>
+          </div><!-- social-line -->
+        </div><!-- card -->
+      </div>
+      <!-- end card -->
 
-        <!-- start card -->
-        <div class="card-box col-md-4 col-sm-6">
-          <div class="card" data-color="orange" data-src="/hipster-as-f-cards/assets/img/music-3.jpg">
-            <div class="content card-content">
-              <h4 class="description"><%= Bet.all.find(6).title %></h4>
-              <div class="btn-center">
-                <button class="btn btn-neutral btn-fill btn-modern">Je parie</button>
-              </div>
-              <div class="filter"></div>
-            </div><!-- content -->
-            <div class="card-social social-line" data-buttons="3">
-              <button class="btn btn-social btn-facebook">
-                <i class="fa fa-facebook"></i>
-              </button>
-              <button class="btn btn-social btn-twitter">
-                <i class="fa fa-twitter"></i>
-              </button>
-              <button class="btn btn-social btn-pinterest">
-                <i class="fa fa-pinterest"></i>
-              </button>
-            </div><!-- social-line -->
-          </div><!-- card -->
-        </div>
-        <!-- end card -->
+      <!-- start card -->
+      <div class="card-box col-md-4 col-sm-6">
+        <div class="card" data-color="orange">
+          <div class="content card-content">
+            <h4 class="description"><%= Bet.all.sample.title %></h4>
+            <div class="btn-center">
+              <button class="btn btn-neutral btn-fill btn-modern">Je parie</button>
+            </div>
+            <div class="filter"></div>
+          </div><!-- content -->
+          <div class="card-social social-line" data-buttons="3">
+            <button class="btn btn-social btn-facebook">
+              <i class="fa fa-facebook"></i>
+            </button>
+            <button class="btn btn-social btn-twitter">
+              <i class="fa fa-twitter"></i>
+            </button>
+            <button class="btn btn-social btn-pinterest">
+              <i class="fa fa-pinterest"></i>
+            </button>
+          </div><!-- social-line -->
+        </div><!-- card -->
+      </div>
+      <!-- end card -->
+      <div class="btn btn-facebook">
+        <%= link_to "Voir tous les paris", bets_path(@bets) %>
+      </div>
+
   </div>
 </div>
 

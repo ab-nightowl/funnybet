@@ -7,6 +7,10 @@
  * (margin/padding adjustments)
  * ------------------------------------- */
 
+.form-control {
+  color: $black;
+}
+
 .wrapper {
   background: #EDEDED;
 }
@@ -24,12 +28,14 @@
 
   h2 {
     padding-bottom: 1.5em;
+    color: $black;
   }
 }
 
 .process {
   h2 {
     padding-bottom: 1.5em;
+    color: $black;
   }
   h3 {
 
@@ -111,11 +117,35 @@
   margin-bottom: 20px;
   margin-top: 25px;
 }
-.btn-homepage {
- margin: 2em;
- width: 150px;
+.btn-voirplus {
+  margin-left: 10px;
+  padding: 0 20px;
+  border-radius: 5px;
+  line-height: 40px;
+  color: white;
+  background-color: $blue;
+  font-size: 14px;
 }
 
+.btn-voirplus:hover {
+  background: $orange;
+}
+
+.banner-wagon-button {
+  text-decoration: none;
+  margin-left: 10px;
+  padding: 15px 20px;
+  border-radius: 5px;
+  line-height: 40px;
+  background-color: $blue;
+  color: white;
+  font-size: 15px;
+}
+.banner-wagon-button:hover {
+  color: white;
+  background: $orange;
+  text-decoration: none;
+}
 
 .banner {
   color: white;

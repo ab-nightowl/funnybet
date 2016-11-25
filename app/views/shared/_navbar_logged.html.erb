@@ -8,28 +8,28 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <!-- Search form -->
-    <form action="/offers" class="navbar-wagon-search">
-      <input type="text" class="navbar-wagon-search-input" placeholder="Search tips">
+    <form action="/bets" class="navbar-wagon-search">
+      <input type="text" class="navbar-wagon-search-input" placeholder="Search bets">
       <button type="submit" class="navbar-wagon-search-btn">
         <i class="fa fa-search"></i>
       </button>
     </form>
 
-
-
     <!-- Profile picture and dropdown -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
+        <% avatar_url =  "clown.png" %>
+        <%= image_tag avatar_url, class: "avatar-medium dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
 
-        <% avatar_url = current_user.facebook_picture_url || "photo_client.png" %>
+        <%# avatar_url = current_user.facebook_picture_url || "sea.jpg" %>
 
-        <% if avatar_url == current_user.facebook_picture_url %>
-          <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-        <% elsif current_user.photo == nil %>
-          <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-        <% else %>
-          <%= cl_image_tag current_user.photo.path, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-        <% end %>
+        <%# if avatar_url == current_user.facebook_picture_url %>
+          <%#= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <%# elsif current_user.photo == nil %>
+          <%#= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <%# else %>
+          <%#= cl_image_tag current_user.photo.path, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <%# end %>
 
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>
@@ -38,7 +38,7 @@
             <% end %>
           </li>
           <li>
-            <%= link_to dashboard_path do %>
+            <%= link_to '#' do %>
              Dashboard
             <% end %>
           </li>
@@ -50,14 +50,9 @@
     </div>
 
     <!-- Button (call-to-action) -->
-    <%= link_to "Give tips", new_offer_path, { class: "navbar-wagon-item navbar-wagon-button btn" } %>
+    <%= link_to "Créer un pari", new_bet_path, { class: "navbar-wagon-item navbar-wagon-button btn" } %>
     <!-- Notification link-->
-    <a href="" class="navbar-wagon-item navbar-wagon-link">
-      <div class="badge-container">
-        <i class="fa fa-envelope-o"></i>
-        <div class="badge badge-blue">3</div>
-      </div>
-    </a>
+
 
   </div>
 
