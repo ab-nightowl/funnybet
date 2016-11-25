@@ -11,75 +11,6 @@
   color: $black;
 }
 
-.wrapper {
-  background: #EDEDED;
-}
-
-.wrapperuser {
-  background: $gradient;
-  position: relative;
-  height: 400px;
-  display: flex;
-  padding-top: 80px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  ul {
-    list-style: none;
-    margin-top: 20px;
-
-  }
-}
-
-.tabs {
-  display: flex;
-
-  justify-content: center;
-  align-items: center;
-}
-
-.tabs a {
-  color: white;
-}
-.tabs a:hover {
-  cursor: pointer;
-  text-decoration: none;
-  opacity: 0.8;
-}
-
-.tabs h3 {
-  font-size: 20px;
-  font-weight: 400;
-  margin-top: 0;
-  color: $blue;
-
-}
-
-
-.tab {
-  background: white;
-  opacity: 0.6;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 22px;
-  padding-right: 22px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.tab:first-child {
-  border-radius: 10px 0 0 0;
-}
-.tab:last-child {
-  border-radius: 0 10px 0 0;
-}
-.tab.active {
-  background: white;
-  opacity: 1;
-}
-
-
 .banner {
   h1 {
     padding-top: 1em;
@@ -115,8 +46,6 @@
 .avatarhome:hover {
   opacity: 3px;
 }
-
-
 
 .circle1 {
   display: inline-block;
