@@ -1,4 +1,6 @@
 <div class="nested-fields">
-  <%= f.input :title %>
-  <%= link_to_remove_association "Enlever cette réponse", f %>
+  <%= f.input :title, label: "Choix <span class='choice_number'></span>".html_safe %>
+  <div class="remove-link hidden">
+    <%= link_to_remove_association "Enlever ce choix", f %>
+  </div>
 </div>

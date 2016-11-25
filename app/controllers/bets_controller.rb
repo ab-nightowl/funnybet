@@ -12,10 +12,14 @@ class BetsController < ApplicationController
   def new
     @bet = Bet.new
     @bet.choices << Choice.new << Choice.new
+    @bet.choices.each do |choice|
+      @bet_choice_id = choice.id
+    end
   end
 
   def create
     @bet = current_user.bets.new(bet_params)
+
     if @bet.save
       flash[:notice] = "Ton pari a été créé"
       redirect_to bet_path(@bet)
@@ -39,10 +43,6 @@ class BetsController < ApplicationController
   end
 
   def bet_params
-    params.require(:bet).permit(:title, :description, :challenge_title, :challenge, :finish_at)
-  end
-
-  def choice_params
-    params.require(:choice).permit(:title)
+    params.require(:bet).permit(:title, :description, :challenge_title, :challenge, :finish_at, choices_attributes: [:title, :_destroy])
   end
 end

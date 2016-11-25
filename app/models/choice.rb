@@ -4,4 +4,6 @@ class Choice < ApplicationRecord
 
   validates :title, presence: true
   # validates :odds
+
+  attr_writer :position
 end
