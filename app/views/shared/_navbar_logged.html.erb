@@ -15,12 +15,10 @@
       </button>
     </form>
 
-
-
     <!-- Profile picture and dropdown -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <% avatar_url =  "sea.jpg" %>
+        <% avatar_url =  "clown.png" %>
         <%= image_tag avatar_url, class: "avatar-medium dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
 
         <%# avatar_url = current_user.facebook_picture_url || "sea.jpg" %>
@@ -52,14 +50,9 @@
     </div>
 
     <!-- Button (call-to-action) -->
-    <%= link_to "Créer un paris", new_bet_path, { class: "navbar-wagon-item navbar-wagon-button btn" } %>
+    <%= link_to "Créer un pari", new_bet_path, { class: "navbar-wagon-item navbar-wagon-button btn" } %>
     <!-- Notification link-->
-    <a href="" class="navbar-wagon-item navbar-wagon-link">
-      <div class="badge-container">
-        <i class="fa fa-envelope-o"></i>
-        <div class="badge badge-blue">3</div>
-      </div>
-    </a>
+
 
   </div>
 

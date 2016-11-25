@@ -24,6 +24,7 @@
   width: 180px;
 }
 
+
 /* Navbar right section (with form, links, button) */
 .navbar-wagon-right {
   display: flex;
@@ -54,8 +55,8 @@
   padding: 0 20px;
   border-radius: 5px;
   line-height: 40px;
-  background-color: $blue;
   color: white;
+  background-color: $blue;
   font-size: 14px;
 }
 .navbar-wagon-button:hover {
@@ -65,13 +66,14 @@
 }
 
 .navbar-wagon-button-banner {
+  text-decoration: none;
   margin-left: 10px;
   padding: 15px 20px;
   border-radius: 5px;
   line-height: 40px;
   background-color: $blue;
   color: white;
-  font-size: 17 px;
+  font-size: 15px;
 }
 .navbar-wagon-button-banner:hover {
   color: white;
