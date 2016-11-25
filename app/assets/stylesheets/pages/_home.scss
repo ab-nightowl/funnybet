@@ -18,49 +18,56 @@
 .wrapperuser {
   background: $gradient;
   position: relative;
-  padding: 100px;
+  height: 400px;
+  display: flex;
+  padding-top: 80px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   ul {
     list-style: none;
+    margin-top: 20px;
+
   }
 }
 
 .tabs {
   display: flex;
-  padding: 10px 10px 0 10px;
+
   justify-content: center;
-  margin-top: 20px;
-  position: absolute;
-  align-content: flex-start;
+  align-items: center;
 }
 
 .tabs a {
   color: white;
-
 }
 .tabs a:hover {
   cursor: pointer;
   text-decoration: none;
   opacity: 0.8;
 }
+
 .tabs h3 {
   font-size: 20px;
   font-weight: 400;
   margin-top: 0;
   color: $blue;
 
-
 }
+
 
 .tab {
   background: white;
   opacity: 0.6;
-  flex: 0 0 30%;
-  padding: 20px 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 22px;
+  padding-right: 22px;
   display: flex;
-
-
-
+  align-items: center;
+  justify-content: center;
 }
+
 .tab:first-child {
   border-radius: 10px 0 0 0;
 }
