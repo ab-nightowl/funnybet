@@ -71,15 +71,33 @@
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-md-3 borders">
         <h4>Paris gagnés</h4>
+          <div class="dashboard-card">
+            <%= Bet.all.sample.title %>
+          </div>
+          <div class="dashboard-card">
+            <%= Bet.all.sample.title %>
+          </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-3 borders">
         <h4>Paris perdus</h4>
+          <div class="dashboard-card">
+            <%= Bet.all.sample.title %>
+          </div>
+          <div class="dashboard-card">
+            <%= Bet.all.sample.title %>
+          </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-3 borders">
         <h4>Taux de réussite</h4>
+          <div class="dashboard-card-taux">
+            <h1> 10 %</h1>
+          </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-3 borders">
-        <h4>ROI</h4>
+        <h4>Classement</h4>
+          <div class="dashboard-card-taux">
+            <h1> 10/1200 </h1>
+          </div>
       </div>
     </div>
   </div>
@@ -87,6 +105,9 @@
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-md-6 borders">
         <h4>En cours</h4>
+          <div class="dashboard-card">
+            <%= Bet.all.sample.challenge_title %>
+          </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-6 borders">
         <h4>Terminés</h4>
