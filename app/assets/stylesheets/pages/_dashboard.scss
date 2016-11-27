@@ -72,12 +72,17 @@
     background-color: white;
     margin-bottom: 20px;
     position: relative;
-    height: 120px;
+    height: 160px;
     max-width: 245px;
     margin-left: auto;
     margin-right: auto;
     padding: 30px;
     margin-top: 30px;
+    li {
+    list-style: none;
+    margin-top: 20px;
+
+  }
 
 }
 
