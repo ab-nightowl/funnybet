@@ -5,9 +5,17 @@ class UsersController < ApplicationController
   def show
   end
 
+
   private
 
   def find_user
     @user = User.find(params[:id])
   end
+
+
+  def product_params
+  params.require(:product).permit(:name, :description, :photo)
+  end
+
+
 end
