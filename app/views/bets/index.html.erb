@@ -18,7 +18,7 @@
           <div class="content card-content">
             <h4 class="description text-center"><%= bet.title %></h4>
             <div class="btn-center">
-              <button class="btn btn-neutral btn-fill btn-modern">Je parie</button>
+              <%= link_to "Je parie", bet_path(bet), class: "btn-treehouse" %>
             </div>
             <div class="filter"></div>
           </div><!-- content -->
