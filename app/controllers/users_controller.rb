@@ -13,8 +13,8 @@ class UsersController < ApplicationController
   end
 
 
-  def product_params
-  params.require(:product).permit(:name, :description, :photo)
+  def user_params
+  params.require(:user).permit(:user_name, :photo)
   end
 
 

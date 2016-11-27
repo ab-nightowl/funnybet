@@ -1,6 +1,14 @@
 <div class="wrapperuser padded-top text-center">
   <ul>
-    <%= image_tag("clown.png", :style => 'width: 100px;')%>
+    <% avatar_url = current_user.facebook_picture_url || "clown.png" %>
+
+      <% if avatar_url == current_user.facebook_picture_url %>
+        <%= image_tag avatar_url, class: "avatar-large dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+      <% elsif current_user.photo == nil %>
+        <%= image_tag avatar_url, class: "avatar-large dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+      <% else %>
+        <%= cl_image_tag current_user.photo.path, class: "avatar-large dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+      <% end %>
 
     <li><%= @user.user_name %></li>
     <li><%= @user.last_name %></li>
