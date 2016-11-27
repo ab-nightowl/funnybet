@@ -51,6 +51,7 @@
 
 /* Navbar right button */
 .navbar-wagon-button {
+  text-decoration: none;
   margin-left: 10px;
   padding: 0 20px;
   border-radius: 5px;
@@ -62,25 +63,8 @@
 .navbar-wagon-button:hover {
   color: white;
   background: $orange;
-
-}
-
-.navbar-wagon-button-banner {
   text-decoration: none;
-  margin-left: 10px;
-  padding: 15px 20px;
-  border-radius: 5px;
-  line-height: 40px;
-  background-color: $blue;
-  color: white;
-  font-size: 15px;
 }
-.navbar-wagon-button-banner:hover {
-  color: white;
-  background: $orange;
-
-}
-
 
 
 /* Navbar search form */

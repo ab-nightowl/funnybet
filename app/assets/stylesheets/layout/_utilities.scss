@@ -21,8 +21,20 @@
   padding: 50px;
 }
 
+// Margins
+
+.row-margin {
+  margin-bottom: 10px;
+}
+
+// Text
+
 .block-align {
   text-align: center;
+}
+
+.text-decoration {
+  text-decoration: none;
 }
 
 // Backgrounds
@@ -39,7 +51,3 @@
   background: #3b5998;
 }
 
-.paddedform {
-  padding-top: 20px;
-  text-decoration: none;
-}

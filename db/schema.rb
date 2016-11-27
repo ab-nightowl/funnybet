@@ -53,10 +53,11 @@ ActiveRecord::Schema.define(version: 20161125151038) do
 
   create_table "choices", force: :cascade do |t|
     t.string   "title"
-    t.boolean  "winning"
+    t.boolean  "winning",    default: false, null: false
     t.integer  "bet_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.float    "odds"
     t.index ["bet_id"], name: "index_choices_on_bet_id", using: :btree
   end
 

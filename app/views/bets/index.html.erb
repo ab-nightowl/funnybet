@@ -1,6 +1,19 @@
 <div class="container padded">
+  <div id="filter-bar">
+    <div class="titre">
+      Categories
+    </div>
+    <ul>
+      <li><%= link_to "Tous", "#", data: { filter: "all" } %></li>
+      <% Category.all.each do |category| %>
+        <li><%= link_to category.name, "#", data: { filter: category.id } %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="filtr-container">
     <% @bets.each do |bet| %>
-      <div class="card-box col-md-4 col-sm-6">
+       <div class="card-box col-md-4 col-sm-6 filtr-item" data-category="<%= bet.category.id %>">
+
         <div class="card" data-color="orange">
           <div class="content card-content">
             <h4 class="description text-center"><%= bet.title %></h4>
@@ -21,6 +34,8 @@
             </button>
           </div><!-- social-line -->
         </div><!-- card -->
-      </div>
+       </div>
     <% end %>
+  </div>
 </div>
+

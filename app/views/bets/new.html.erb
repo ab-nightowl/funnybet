@@ -1,0 +1,91 @@
+<div class="wrapper body-bet">
+  <div class="container padded">
+    <div class="col-xs-3 text-center">
+      <div class="beters-container">
+       <h4>Parieurs</h4>
+        <div class="margin_avatar">
+          <%= image_tag 'logo.png', class: "avatar-medium center-block" %>
+          <br>
+          <%= image_tag 'logo.png', class: "avatar-medium center-block" %>
+          <br>
+          <%= image_tag 'logo.png', class: "avatar-medium center-block" %>
+          <br>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-xs-9">
+      <%= simple_form_for @bet do |f| %>
+
+        <div class="row row-margin form_background" >
+          <div class="text-center">
+
+            <h2 class="padded-h2">Créer un pari</h2>
+
+            <div class="form-inputs text-decoration paddedform-sides">
+              <%= f.input :title, label: "Donne un titre à ton pari" %>
+              <%= f.input :description, label: "Pour plus de détails (si tu veux)" %>
+              <%= f.association :category, label: "Catégorie" %>
+            </div>
+
+            <div class="paddedform-sides">
+              <p class="padded-p"><strong>Choix de réponses :</strong></p>
+
+              <div>
+                <% if @bet.errors.messages[:choices].any? %>
+                  <div class="text-danger">
+                    <%= @bet.errors.messages[:choices].join(', ') %>
+                  </div>
+                <% end %>
+
+                <div class="form-inputs text-decoration" id="choices">
+                  <%= f.simple_fields_for(:choices) do |choice, index| %>
+                    <%= render 'choice_fields', f: choice %>
+                  <% end %>
+
+                  <div class="links">
+                    <%= link_to_add_association 'Ajouter un choix', f, :choices %>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <h3 class="padded-h3">Le gage</h3>
+
+            <div class="form-inputs text-decoration paddedform-sides">
+              <%= f.input :challenge_title, label: "Donne une indication sur le gage pour le(s) perdant(s) ;)" %>
+              <%= f.input :challenge, label: "C'est quoi ton gage ?" %>
+            </div>
+
+            <h3 class="padded-h3">Dealine du pari</h3>
+
+
+            <div class="form-inputs text-decoration paddedform-sides">
+              <%= f.input :finish_at, label: "Donne une date de cloture du pari" %>
+
+              <div class="btn-margin">
+                <%= f.button :submit, "Créer !", class: "bet_button" %>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- <div class="row row-margin challenge_background">
+
+        </div>
+
+        <div class="row row-margin">
+          <div class="deadline text-center">
+
+          </div>
+        </div> -->
+
+      <% end %>
+
+    </div>
+  </div>
+</div>

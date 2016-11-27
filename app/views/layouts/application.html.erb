@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Istok+Web" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Devonshire|Dr+Sugiyama|Mr+Dafoe|Mrs+Sheppards|Vampiro+One|Yesteryear" rel="stylesheet">
 
+
   </head>
   <body>
     <% if current_user %>
@@ -21,6 +22,8 @@
     <%= yield %>
     <%= render "shared/footer" %>
     <%= javascript_include_tag 'application' %>
+
     <%= cloudinary_js_config %>
+
   </body>
 </html>
