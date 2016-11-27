@@ -63,13 +63,27 @@
 
 
 .borders {
-    padding: 20px;
-border-color: red;
+  padding: 10px;
  }
 
+.dashboard-card {
+    border-radius: $border-radius-small;
+    box-shadow: 0 1px 4px rgba(0,0,0,.23);
+    background-color: #EDEDED;
+    margin-bottom: 20px;
+    position: relative;
+    height: 120px;
+    max-width: 245px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+    margin-top: 40px;
 
+}
 
-
+.dashboard-card:hover {
+  color: #3C90F7;
+}
 
 
 
