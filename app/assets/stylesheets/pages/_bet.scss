@@ -14,14 +14,12 @@
 .description_background{
   background: white;
   min-height: 300px;
-  margin-bottom: 10px;
   border-top: 3px solid #F3AC3C;
 }
 
 .challenge_background{
   background: white;
   min-height: 200px;
-  margin-bottom: 10px;
   border-top: 3px solid #F3AC3C;
 }
 
@@ -35,7 +33,7 @@
 
 .deadline{
   background-color: white;
-  margin-bottom: 10px;
+  border-top: 3px solid #F3AC3C;
 }
 
 .beters-container{
@@ -43,7 +41,8 @@
   box-shadow: 5px 3px 5px lightgrey;
   display: flex;
   flex-direction: column;
-  min-height: 900px;
+  min-height: 965px;
+  color: black;
 }
 
 .margin_avatar{
@@ -58,8 +57,12 @@
   flex-direction: row;
   min-height: 100px;
   padding: 15px;
-  margin-bottom: 10px;
   border-top: 3px solid #F3AC3C;
 
 }
 
+.choices-background{
+  background: white;
+  min-height: 300px;
+  border-top: 3px solid #F3AC3C;
+}
