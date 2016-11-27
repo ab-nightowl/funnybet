@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :bets, dependent: :destroy
   has_many :user_choices, dependent: :destroy
 
+  has_attachment :photo
+
   validates :user_name, presence: true, uniqueness: true
 
   def self.find_for_facebook_oauth(auth)
