@@ -39,24 +39,24 @@ end
 
 
 ongoing_bet1 = Bet.new(
-  title: "Qui gagnera les élections US 2016 ?",
+  title: "A quelle heure arrivera Alex le matin du Demo Day ?",
   user: users.sample,
-  category: Category.where(name: "Politique").first,
+  category: Category.where(name: "Privé").first,
   finish_at: DateTime.new(2016,11,9,1,54,3)
   #proof: ""
 )
 choice_1a = ongoing_bet1.choices.new(
-  title: "Sylvain sera en avance (avant 9h)",
+  title: "En avance (avant 9h)",
   bet: ongoing_bet1,
   winning: false
 )
 choice_1b = ongoing_bet1.choices.new(
-  title: "Sylvain sera à l'heure pile poils",
+  title: "A l'heure pile poils",
   bet: ongoing_bet1,
   winning: false
 )
 choice_1c = ongoing_bet1.choices.new(
-  title: "Sylvain sera en retard (comme d'hab)",
+  title: "En retard (comme d'hab)",
   bet: ongoing_bet1,
   winning: false
 )
@@ -101,14 +101,12 @@ choice_2d.save
 
 
 ongoing_bet3 = Bet.new(
-  title: "Julien est-il un black gay ?",
+  title: "Neigera-t-il le jour de Noël ?",
   user: users.sample,
-  category: Category.where(name: "Privé").first,
-  finish_at: DateTime.new(2016,12,2,19,0,0),
+  category: Category.where(name: "Autre").first,
+  finish_at: DateTime.new(2016,12,25,23,59,59),
   #proof: "",
-  challenge_title: "Kiss kiss !",
-  challenge: "Si tu te trompes, tu devras embrasser Julien sur la bouche (dans n'importe quel cas) !"
-)
+  )
 choice_3a = ongoing_bet3.choices.new(
   title: "Oui",
   bet: ongoing_bet3,
@@ -120,7 +118,7 @@ choice_3b = ongoing_bet3.choices.new(
   winning: false
 )
 choice_3c = ongoing_bet3.choices.new(
-  title: "Il est bi !",
+  title: "Neige fondue",
   bet: ongoing_bet3,
   winning: false
 )
