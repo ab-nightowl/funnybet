@@ -1,7 +1,8 @@
 var MAX = 10;
 var MIN = 0;
 
-$('.spinner .spinner-plus').click(function(){
+$('.spinner .spinner-plus').click(function(e){
+  e.preventDefault();
   var value = parseInt($('.spinner input').val());
   if (isNaN(value)) {
     value = MIN;
@@ -12,7 +13,8 @@ $('.spinner .spinner-plus').click(function(){
   $('.spinner input').val(value);
 });
 
-$('.spinner .spinner-minus').click(function(){
+$('.spinner .spinner-minus').click(function(e){
+  e.preventDefault();
   var value = parseInt($('.spinner input').val());
   if (isNaN(value)) {
     value = MIN;
@@ -23,7 +25,8 @@ $('.spinner .spinner-minus').click(function(){
   $('.spinner input').val(value);
 });
 
-$('.spinner .spinner-all-in').click(function(){
+$('.spinner .spinner-all-in').click(function(e){
+  e.preventDefault();
   $('.spinner input').val(MAX);
 });
 

@@ -17,7 +17,8 @@
 
           <%= link_to "Add friends", "#" %>
         </div>
-      <% end  %>
+      <% end %>
+
       <div class="beters-container">
        <h4>Parieur</h4>
        <br>
@@ -44,28 +45,44 @@
         <strong><p><%= @bet.finish_at %></p></strong>
         </div>
       </div>
-      <div class="row row-margin text-center text-align">
 
-      </div>
-      <div class="row bet_amount_background ">
-        <div class="padded-text">
-          <p>Lache ton fric :</p>
-          <br>
-          <div class="input-group spinner">
-            <div class="input-group-btn">
-             <%= link_to "-", "#", class: "btn btn-default spinner-minus" %>
-            </div>
-            <input type="text" class="form-control" value="0">
-            <div class="input-group-btn">
-              <%= link_to "+", "#", class: "btn btn-default spinner-plus" %>
-              <%= link_to "ALL IN", "#", class: "btn btn-default spinner-all-in" %>
-            </div>
-          </div>
-          <div class="margin-button">
-          <%= link_to "Parier", "#", { class: "navbar-wagon-item navbar-wagon-button btn" } %>
+
+      <%= simple_form_for @user_choice do |f| %>
+        <div class="row row-margin text-center text-align">
+          <div class="flex_odd padded-text">
+
+            <% @bet.choices.each do |choice| %>
+              <div class="bet_button">
+                <%= f.radio_button :choice, choice.id %>
+                <label for="user_choice_choice_<%= choice.id %>">
+                  <i class="fa fa-check"></i>
+                  <%= choice.title %>
+                </label>
+              </div>
+            <% end %>
           </div>
         </div>
-      </div>
+        <div class="row bet_amount_background ">
+          <div class="padded-text">
+            <p>Lache ton fric :</p>
+            <br>
+            <div class="input-group spinner">
+              <div class="input-group-btn">
+               <%= link_to "-", "#", class: "btn btn-default spinner-minus" %>
+              </div>
+              <%= f.text_field :bet_amount, class: "form-control" %>
+              <div class="input-group-btn">
+                <%= link_to "+", "#", class: "btn btn-default spinner-plus" %>
+                <%= link_to "ALL IN", "#", class: "btn btn-default spinner-all-in" %>
+              </div>
+            </div>
+            <div class="margin-button">
+            <%= link_to "Parier", "#", { class: "navbar-wagon-item navbar-wagon-button btn" } %>
+            <%= f.button :submit %>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

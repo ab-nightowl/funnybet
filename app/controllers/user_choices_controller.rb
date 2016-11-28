@@ -1,13 +1,11 @@
-class UserChoicesController
-  before_action :find_bet, only: [:create]
+class UserChoicesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:create]
 
   def create
-    UserChoice.new
-  end
+    byebug
+    @user_choice = current_user.bets.user_choices.new(bet_params)
 
-  private
-
-  def find_bet
-    @bet = Bet.find(params[:id])
+    # créer le use choice
+    redirect_to @user_choice.choice.bet
   end
 end

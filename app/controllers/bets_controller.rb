@@ -7,6 +7,7 @@ class BetsController < ApplicationController
   end
 
   def show
+    @user_choice = UserChoice.new
   end
 
   def new
