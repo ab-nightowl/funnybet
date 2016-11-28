@@ -1,24 +1,21 @@
 <!-- start card -->
-      <div class="card-box col-md-4 col-sm-6">
-        <div class="card" data-color="orange" data-src="/hipster-as-f-cards/assets/img/music-3.jpg">
-          <div class="content card-content">
-            <h4 class="description"><%= bet.title %></h4>
-            <div class="btn-center">
-              <%= link_to "Je parie", bet_path(bet), class: "btn-treehouse" %>
-            </div>
-            <div class="filter"></div>
-          </div><!-- content -->
-          <div class="card-social social-line" data-buttons="3">
-            <button class="btn btn-social btn-facebook">
-              <i class="fa fa-facebook"></i>
-            </button>
-            <button class="btn btn-social btn-twitter">
-              <i class="fa fa-twitter"></i>
-            </button>
-            <button class="btn btn-social btn-pinterest">
-              <i class="fa fa-pinterest"></i>
-            </button>
-          </div><!-- social-line -->
-        </div><!-- card -->
+<div class="card-box col-md-4 col-sm-6">
+  <div class="card" data-color="orange" data-src="/hipster-as-f-cards/assets/img/music-3.jpg">
+    <div class="content card-content">
+      <h4 class="description"><%= bet.title %></h4>
+      <div class="btn-center">
+        <%= link_to "Je parie", bet_path(bet), class: "btn-treehouse" %>
       </div>
+      <div class="filter"></div>
+    </div><!-- content -->
+      <div class="card-social social-line" data-buttons="3">
+        <%#= link_to "", social_share_button_tag(bet.title), class: 'btn btn-social btn-facebook fa fa-facebook' %>
+        <%#= link_to "", 'http://www.facebook.com/sharer.php?u='+request.fullpath, :target => :blank, class: 'btn btn-social btn-twitter fa fa-twitter' %>
+        <%#= link_to "", 'http://www.facebook.com/sharer.php?u='+request.fullpath, :target => :blank, class: 'btn btn-social btn-pinterest fa fa-pinterest' %>
+
+        <%= social_share_button_tag(bet.title) %>
+
+    </div><!-- social-line -->
+  </div><!-- card -->
+</div>
 <!-- end card -->
