@@ -45,22 +45,25 @@ ongoing_bet1 = Bet.new(
   finish_at: DateTime.new(2016,11,9,1,54,3)
   #proof: ""
 )
-ongoing_bet1.choices.new(
+choice_1a = ongoing_bet1.choices.new(
   title: "Sylvain sera en avance (avant 9h)",
   bet: ongoing_bet1,
   winning: false
 )
-ongoing_bet1.choices.new(
+choice_1b = ongoing_bet1.choices.new(
   title: "Sylvain sera à l'heure pile poils",
   bet: ongoing_bet1,
   winning: false
 )
-ongoing_bet1.choices.new(
+choice_1c = ongoing_bet1.choices.new(
   title: "Sylvain sera en retard (comme d'hab)",
   bet: ongoing_bet1,
   winning: false
 )
 ongoing_bet1.save
+choice_1a.save
+choice_1b.save
+choice_1c.save
 
 
 ongoing_bet2 = Bet.new(
@@ -70,27 +73,31 @@ ongoing_bet2 = Bet.new(
   finish_at: DateTime.new(2017,5,7,22,30,0)
   #proof: ""
 )
-ongoing_bet2.choices.new(
+choice_2a = ongoing_bet2.choices.new(
   title: "Fillon",
   bet: ongoing_bet2,
   winning: false
 )
-ongoing_bet2.choices.new(
+choice_2b = ongoing_bet2.choices.new(
   title: "Juppé",
   bet: ongoing_bet2,
   winning: false
 )
-ongoing_bet2.choices.new(
+choice_2c = ongoing_bet2.choices.new(
   title: "MLP",
   bet: ongoing_bet2,
   winning: false
 )
-ongoing_bet2.choices.new(
+choice_2d = ongoing_bet2.choices.new(
   title: "Mélenchon",
   bet: ongoing_bet2,
   winning: false
 )
 ongoing_bet2.save
+choice_2a.save
+choice_2b.save
+choice_2c.save
+choice_2d.save
 
 
 ongoing_bet3 = Bet.new(
@@ -102,22 +109,25 @@ ongoing_bet3 = Bet.new(
   challenge_title: "Kiss kiss !",
   challenge: "Si tu te trompes, tu devras embrasser Julien sur la bouche (dans n'importe quel cas) !"
 )
-ongoing_bet3.choices.new(
+choice_3a = ongoing_bet3.choices.new(
   title: "Oui",
   bet: ongoing_bet3,
   winning: false
 )
-ongoing_bet3.choices.new(
+choice_3b = ongoing_bet3.choices.new(
   title: "Non",
   bet: ongoing_bet3,
   winning: false
 )
-ongoing_bet3.choices.new(
+choice_3c = ongoing_bet3.choices.new(
   title: "Il est bi !",
   bet: ongoing_bet3,
   winning: false
 )
 ongoing_bet3.save
+choice_3a.save
+choice_3b.save
+choice_3c.save
 
 
 ongoing_bet4 = Bet.new(
@@ -126,16 +136,19 @@ ongoing_bet4 = Bet.new(
   category: Category.where(name: "Sports").first,
   finish_at: DateTime.new(2017,9,1,19,0,0)
 )
-ongoing_bet4.choices.new(
+choice_4a = ongoing_bet4.choices.new(
   title: "Oui",
   bet: ongoing_bet4,
   winning: false
 )
-ongoing_bet4.choices.new(
+choice_4b = ongoing_bet4.choices.new(
   title: "Non",
   bet: ongoing_bet4,
   winning: false
 )
+ongoing_bet4.save
+choice_4a.save
+choice_4b.save
 
 
 ongoing_bet5 = Bet.new(
@@ -147,16 +160,19 @@ ongoing_bet5 = Bet.new(
   #challenge_title: "",
   #challenge: ""
 )
-ongoing_bet5.choices.new(
+choice_5a = ongoing_bet5.choices.new(
   title: "Oui",
   bet: ongoing_bet5,
   winning: false
 )
-ongoing_bet5.choices.new(
+choice_5b = ongoing_bet5.choices.new(
   title: "Non",
   bet: ongoing_bet5,
   winning: false
 )
+ongoing_bet5.save
+choice_5a.save
+choice_5b.save
 
 
 ongoing_bet6 = Bet.new(
@@ -168,16 +184,19 @@ ongoing_bet6 = Bet.new(
   challenge_title: "Passage de tondeuse",
   challenge: "S'il ne tient pas les 100 jours, il devra se faire la boule à zéro mais s'il tient, c'est toi qui deviendra chauve !!"
 )
-ongoing_bet6.choices.new(
+choice_6a = ongoing_bet6.choices.new(
   title: "Oui",
   bet: ongoing_bet6,
   winning: false
 )
-ongoing_bet6.choices.new(
+choice_6b = ongoing_bet6.choices.new(
   title: "Non",
   bet: ongoing_bet6,
   winning: false
 )
+ongoing_bet6.save
+choice_6a.save
+choice_6b.save
 
 
 ongoing_bet7 = Bet.new(
@@ -186,16 +205,19 @@ ongoing_bet7 = Bet.new(
   category: Category.where(name: "Stars").first,
   finish_at: DateTime.new(2017,1,1,0,0,0)
 )
-ongoing_bet7.choices.new(
+choice_7a = ongoing_bet7.choices.new(
   title: "Oui",
   bet: ongoing_bet7,
   winning: false
 )
-ongoing_bet7.choices.new(
+choice_7b = ongoing_bet7.choices.new(
   title: "Non",
   bet: ongoing_bet7,
   winning: false
 )
+ongoing_bet7.save
+choice_7a.save
+choice_7b.save
 
 
 ongoing_bets = [
@@ -216,17 +238,19 @@ played_bet1 = Bet.new(
   finish_at: DateTime.new(2016,11,9,1,54,3)
   #proof: ""
   )
-played_bet1.choices.new(
+choice_8a = played_bet1.choices.new(
   title: "Hillary",
   bet: played_bet1,
   winning: false
   )
-played_bet1.choices.new(
+choice_8b = played_bet1.choices.new(
   title: "Donald",
   bet: played_bet1,
   winning: true
   )
 played_bet1.save
+choice_8a.save
+choice_8b.save
 
 
 played_bet2 = Bet.new(
@@ -236,32 +260,37 @@ played_bet2 = Bet.new(
   finish_at: DateTime.new(2016,11,20,20,55,18)
   #proof: ""
   )
-played_bet2.choices.new(
+choice_9a = played_bet2.choices.new(
   title: "Juppé",
   bet: played_bet2,
   winning: true
   )
-played_bet2.choices.new(
+choice_9b = played_bet2.choices.new(
   title: "Sarko",
   bet: played_bet2,
   winning: true
   )
-played_bet2.choices.new(
+choice_9c = played_bet2.choices.new(
   title: "Fillon",
   bet: played_bet2,
   winning: true
   )
-played_bet2.choices.new(
+choice_9d = played_bet2.choices.new(
   title: "Le Maire",
   bet: played_bet2,
   winning: true
   )
-played_bet2.choices.new(
+choice_9e = played_bet2.choices.new(
   title: "Coppé",
   bet: played_bet2,
   winning: true
   )
 played_bet2.save
+choice_9a.save
+choice_9b.save
+choice_9c.save
+choice_9d.save
+choice_9e.save
 
 
 played_bets = [
@@ -276,71 +305,52 @@ users.each do |user|
   user: user,
   choice: ongoing_bet1.choices.sample
   )
-
-  user.user_choices << uc
 end
 users.each do |user|
   uc = UserChoice.create!(
   user: user,
   choice: ongoing_bet2.choices.sample
   )
-
-  user.user_choices << uc
 end
 users.each do |user|
   uc = UserChoice.create!(
   user: user,
   choice: ongoing_bet3.choices.sample
   )
-
-  user.user_choices << uc
 end
 users.each do |user|
   uc = UserChoice.create!(
   user: user,
   choice: ongoing_bet4.choices.sample
   )
-
-  user.user_choices << uc
 end
 users.each do |user|
   uc = UserChoice.create!(
   user: user,
   choice: ongoing_bet5.choices.sample
   )
-
-  user.user_choices << uc
 end
 users.each do |user|
   uc = UserChoice.create!(
   user: user,
   choice: ongoing_bet6.choices.sample
   )
-
-  user.user_choices << uc
 end
 users.each do |user|
   uc = UserChoice.create!(
   user: user,
   choice: ongoing_bet7.choices.sample
   )
-
-  user.user_choices << uc
 end
 users.each do |user|
   uc = UserChoice.create!(
   user: user,
   choice: played_bet1.choices.sample
   )
-
-  user.user_choices << uc
 end
 users.each do |user|
   uc = UserChoice.create!(
   user: user,
   choice: played_bet2.choices.sample
   )
-
-  user.user_choices << uc
 end
-
