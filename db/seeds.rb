@@ -303,54 +303,63 @@ played_bets = [
 users.each do |user|
   uc = UserChoice.create!(
   user: user,
-  choice: ongoing_bet1.choices.sample
+  choice: ongoing_bet1.choices.sample,
+  bet_amount: 10
   )
 end
 users.each do |user|
   uc = UserChoice.create!(
   user: user,
-  choice: ongoing_bet2.choices.sample
+  choice: ongoing_bet2.choices.sample,
+  bet_amount: 10
   )
 end
 users.each do |user|
   uc = UserChoice.create!(
   user: user,
-  choice: ongoing_bet3.choices.sample
+  choice: ongoing_bet3.choices.sample,
+  bet_amount: 10
   )
 end
 users.each do |user|
   uc = UserChoice.create!(
   user: user,
-  choice: ongoing_bet4.choices.sample
+  choice: ongoing_bet4.choices.sample,
+  bet_amount: 10
   )
 end
 users.each do |user|
   uc = UserChoice.create!(
   user: user,
-  choice: ongoing_bet5.choices.sample
+  choice: ongoing_bet5.choices.sample,
+  bet_amount: 10
   )
 end
 users.each do |user|
   uc = UserChoice.create!(
   user: user,
-  choice: ongoing_bet6.choices.sample
+  choice: ongoing_bet6.choices.sample,
+  bet_amount: 10
   )
 end
 users.each do |user|
   uc = UserChoice.create!(
   user: user,
-  choice: ongoing_bet7.choices.sample
+  choice: ongoing_bet7.choices.sample,
+  bet_amount: 10
   )
 end
 users.each do |user|
   uc = UserChoice.create!(
   user: user,
-  choice: played_bet1.choices.sample
+  choice: played_bet1.choices.sample,
+  bet_amount: 10
   )
 end
 users.each do |user|
   uc = UserChoice.create!(
   user: user,
-  choice: played_bet2.choices.sample
+  choice: played_bet2.choices.sample,
+  bet_amount: 10
   )
 end
