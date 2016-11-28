@@ -1,0 +1,39 @@
+.social-share-button {
+  display: flex;
+  justify-content: space-between;
+
+  .ssb-icon {
+    width: 100%;
+    height: 40px;
+    &:first-child {
+      border-bottom-left-radius: 2px;
+    }
+    &:last-child {
+      border-bottom-right-radius: 2px;
+    }
+  }
+
+  .ssb-facebook {
+    background-color: #3461D0;
+    &:hover {
+      background-color: white;
+      background-image: asset-url("facebook-hover.svg");
+    }
+  }
+
+.ssb-twitter {
+    background-color: #00A2F9;
+    &:hover {
+      background-color: white;
+      background-image: asset-url("tw.svg");
+    }
+  }
+
+  .ssb-pinterest {
+    background-color: #C52926;
+    &:hover {
+      background-color: white;
+      background-image: asset-url("tw.svg");
+    }
+  }
+}

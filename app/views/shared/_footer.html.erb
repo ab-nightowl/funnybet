@@ -1,19 +1,12 @@
 <footer class="footer-distributed">
-
-      <div class="footer-left">
-        <p class="footer-links">
-          <%= link_to "Home", root_path %>
-          <% if current_user %>
-            <%= link_to "My profile", user_path(current_user) %>
-          <% else %>
-            <%= link_to "My profile", new_user_session_path %>
-          <% end %>
-
-
-        </p>
-
-
-      </div>
-      </div>
-
-    </footer>
+  <div class="footer-left">
+    <p class="footer-links">
+      <%= link_to "Home", root_path %>
+      <% if current_user %>
+        <%= link_to "My profile", user_path(current_user) %>
+      <% else %>
+        <%= link_to "My profile", new_user_session_path %>
+      <% end %>
+    </p>
+  </div>
+</footer>

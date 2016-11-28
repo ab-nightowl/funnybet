@@ -6,10 +6,5 @@
 //= require jquery-fileupload/basic
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
+//= require social-share-button
 //= require_tree .
-
-
-
-var filterizd = $('.filtr-container').filterizr({
-   //options object
-});

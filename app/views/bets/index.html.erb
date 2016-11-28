@@ -1,3 +1,10 @@
+<% content_for :after_js do %>
+  <script>
+    var filterizd = $('.filtr-container').filterizr();
+  </script>
+<% end %>
+
+
 <div class="container padded">
   <div id="filter-bar">
     <div class="titre">
@@ -23,15 +30,7 @@
             <div class="filter"></div>
           </div><!-- content -->
           <div class="card-social social-line" data-buttons="3">
-            <button class="btn btn-social btn-facebook">
-              <i class="fa fa-facebook"></i>
-            </button>
-            <button class="btn btn-social btn-twitter">
-              <i class="fa fa-twitter"></i>
-            </button>
-            <button class="btn btn-social btn-pinterest">
-              <i class="fa fa-pinterest"></i>
-            </button>
+            <%= social_share_button_tag(bet.title) %>
           </div><!-- social-line -->
         </div><!-- card -->
        </div>
