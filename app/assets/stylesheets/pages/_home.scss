@@ -7,12 +7,12 @@
  * (margin/padding adjustments)
  * ------------------------------------- */
 
-.form-control {
-  color: $black;
-}
-
 .wrapper {
   background: #EDEDED;
+}
+
+.form-control {
+  color: $black;
 }
 
 .banner {
@@ -50,8 +50,6 @@
 .avatarhome:hover {
   opacity: 3px;
 }
-
-
 
 .circle1 {
   display: inline-block;

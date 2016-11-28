@@ -11,6 +11,10 @@
   margin: 5px;
 }
 
+.margin-button{
+  margin-top: 20px;
+}
+
 .description_background{
   background: white;
   min-height: 300px;
@@ -36,17 +40,26 @@
   border-top: 3px solid #F3AC3C;
 }
 
+.profile-container {
+  background-color: white;
+  box-shadow: 5px 3px 5px lightgrey;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 200px;
+  color: black;
+  border-top: 3px solid #F3AC3C;
+
+}
+
 .beters-container{
   background-color: white;
   box-shadow: 5px 3px 5px lightgrey;
   display: flex;
   flex-direction: column;
-  min-height: 965px;
+  min-height: 200px;
   color: black;
-}
-
-.margin_avatar{
-  margin: 5px;
+  border-top: 3px solid #F3AC3C;
 }
 
 

@@ -19,13 +19,10 @@
     margin-right: auto;
 
     .title,
-    .stats,
     .category,
     .description,
     .social-line,
-    .actions,
     .content,
-    .footer,
     small,
     a{
         position: relative;
@@ -33,102 +30,24 @@
     }
 
     a{
-        color: $black-hr;
+        color: $blue;
 
         &:hover,
         &:focus{
-            color: $black-color;
-        }
-    }
-
-    &[data-radius="none"]{
-        border-radius: $border-radius-none;
-
-        .header{
-            border-radius: $border-radius-none-top;
-
-            img{
-                border-radius: $border-radius-none-top;
-            }
-        }
-    }
-
-    &.card-plain{
-        box-shadow: none;
-    }
-
-
-
-    .title-uppercase{
-        text-transform: uppercase;
-    }
-
-    .header{
-        position: relative;
-        border-radius: $border-radius-small-top;
-        height: 200px;
-        z-index: 3;
-
-        img{
-            @include opacity(0);
-            display: none;
-        }
-
-        .category{
-            padding: 15px;
-        }
-
-        .social-line{
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            @include opacity(0);
-            display: block;
-            transition: all 0.4s;
-            -webkit-transition: all 0.4s;
-
-            .btn,
-            a{
-                font-family: "Roboto","Helvetica","Arial", sans-serif;
-                font-weight: 400;
-            }
-
-            &.social-line-visible{
-                @include opacity(1);
-            }
-        }
-    }
-
-    .content{
-        .price{
-            border: 2px solid rgba(255,255,255,.7);
             color: white;
-            border-radius: 50%;
-            width: 152px;
-            height: 152px;
-            margin: 50px auto;
-            text-align: center;
-            vertical-align: middle;
-            line-height: 200px;
-
-            h4{
-                margin: 5px 0 0;
-                font-size: 36px;
-            }
-
-            h6{
-                margin-top: 45px;
-                font-size: 16px;
-            }
-
-            .currency{
-                font-size: 22px;
-                font-weight: normal;
-            }
         }
     }
-    .actions{
-        padding: 10px 15px;
+
+    .card-social {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+    .card-content {
+      flex-direction: column;
+      justify-content: space-around;
+      display: flex;
+      height: 300px;
     }
 
     .social-line{
@@ -184,41 +103,6 @@
 
     }
 
-    .filter,
-    .header .actions{
-        position: absolute;
-        z-index: 2;
-        background-color: rgba(0,0,0,.1);
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-
-        @include opacity(0);
-    }
-
-    .label{
-        font-size: $font-size-base;
-        margin-bottom: 0px;
-        i{
-            font-size: $font-paragraph;
-        }
-    }
-    .category{
-        color: $dark-gray;
-    }
-    .label{
-        text-shadow: none;
-    }
-    .title{
-        color: $black-color;
-    }
-
-    > .title{
-       margin: 0;
-       padding: 30px 0 0;
-    }
 
     .content{
         padding: 15px 15px 5px 15px;
@@ -236,6 +120,8 @@
         }
     }
 
+
+
     .description{
         font-size: $font-paragraph;
         color: white;
@@ -246,32 +132,6 @@
         margin: 0;
     }
 
-    .footer{
-        padding: 0 15px 15px;
-
-        .social-line{
-            .btn:first-child{
-                border-radius: 0 0 0 6px;
-            }
-            .btn:last-child{
-                border-radius: 0 0 6px 0;
-            }
-        }
-    }
-
-
-    &.card-separator:after{
-        height: 100%;
-        right: -15px;
-        top: 0;
-        width: 1px;
-        background-color: $medium-gray;
-        content: "";
-        position: absolute;
-    }
-
-
-
     .col-lg-4 &{
         .icon{
             i{
@@ -281,90 +141,6 @@
         }
     }
 
-    &.card-with-border{
-        .content{
-            padding: 15px 15px 25px 15px;
-        }
-
-        .footer{
-            padding-bottom: 25px;
-        }
-    }
-
-    &.card-with-border:after{
-        position: absolute;
-        display: block;
-        width: calc(100% - 10px);
-        height: calc(100% - 10px);
-        content: "";
-        top: 5px;
-        left: 5px;
-        border: 1px solid rgba(0,0,0, 0.15);
-        z-index: 1;
-        border-radius: 5px;
-    }
-
-    &.card-just-text{
-        .content{
-            padding: 50px 65px;
-            text-align: center;
-        }
-    }
-
-    &[data-background="image"],
-    &[data-background="color"]{
-        .image{
-            border-radius: $border-radius-large;
-        }
-
-        .title{
-            font-weight: bold;
-        }
-
-        .filter{
-            border-radius: $border-radius-large;
-        }
-
-        .title,
-        .stats,
-        .category,
-        .description,
-        .content,
-        .footer,
-        small,
-        a{
-            color: $white-color;
-        }
-
-        a:hover,
-        a:focus{
-            color: $white-color;
-        }
-
-        .icon{
-            i{
-                color: #FFFFFF;
-                border: 2px solid rgba(255,255,255,.6);
-            }
-        }
-
-        &.card-with-border:after{
-            border: 1px solid rgba(255, 255, 255, 0.45);
-        }
-    }
-
-    &[data-background="image"]{
-        text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
-
-        .filter{
-            @include opacity(0.55);
-        }
-
-        &:hover .filter{
-            @include opacity(0.75);
-        }
-
-    }
 
     &[data-color="blue"]{
         @include card-radial-gradient ($icon-blue-color-top, $icon-blue-color-bottom);
@@ -392,55 +168,3 @@
 }
 
 
-.filter.filter-white{
-    @include filter($white-color);
-}
-.filter.filter-blue{
-    @include card-radial-gradient ($icon-blue-color-top, $icon-blue-color-bottom);
-}
-.filter.filter-azure{
-    @include card-radial-gradient ($icon-azure-color-top, $icon-azure-color-bottom);
-}
-.filter.filter-green{
-    @include card-radial-gradient ($icon-green-color-top, $icon-green-color-bottom);
-}
-.filter.filter-orange{
-    @include card-radial-gradient ($icon-orange-color-top, $icon-orange-color-bottom);
-}
-.filter.filter-red{
-    @include card-radial-gradient ($icon-red-color-top, $icon-red-color-bottom);
-}
-
-@media (min-width: 1200px){
-    .card{
-        .header{
-            height: 265px;
-        }
-
-        &[data-background="color"]{
-            .header{
-                height: 230px;
-            }
-        }
-    }
-
-    .col-md-3 .card,
-    .col-sm-3 .card,
-    .col-xs-3 .card,
-    .col-lg-3 .card{
-        .header{
-            height: 185px;
-        }
-    }
-}
-.card-social {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-.card-content {
-  flex-direction: column;
-  justify-content: space-around;
-  display: flex;
-  height: 300px;
-}
