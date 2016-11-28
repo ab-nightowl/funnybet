@@ -1,22 +1,24 @@
 <div class="wrapper body-bet">
   <div class="container padded">
     <div class="col-xs-3 text-center">
-      <div class="row-margin profile-container">
+      <% if current_user %>
+        <div class="row-margin profile-container">
 
-        <% avatar_url = current_user.facebook_picture_url || "clown.png" %>
+          <% avatar_url = current_user.facebook_picture_url || "clown.png" %>
 
-        <% if avatar_url == current_user.facebook_picture_url %>
-          <%= image_tag avatar_url, class: "avatar-large dropdown-toggle center-block", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-        <% elsif current_user.photo == nil %>
-          <%= image_tag avatar_url, class: "avatar-large dropdown-toggle center-block", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-        <% else %>
-          <%= cl_image_tag current_user.photo.path, class: "avatar-large dropdown-toggle center-block", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-        <% end %>
-        <%= current_user.user_name %>
+          <% if avatar_url == current_user.facebook_picture_url %>
+            <%= image_tag avatar_url, class: "avatar-large dropdown-toggle center-block", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <% elsif current_user.photo == nil %>
+            <%= image_tag avatar_url, class: "avatar-large dropdown-toggle center-block", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <% else %>
+            <%= cl_image_tag current_user.photo.path, class: "avatar-large dropdown-toggle center-block", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <% end %>
+          <%= current_user.user_name %>
 
-        <%= link_to "Add friends", "#" %>
+          <%= link_to "Add friends", "#" %>
+        </div>
+      <% end %>
 
-      </div>
       <div class="beters-container">
        <h4>Parieur</h4>
        <br>
@@ -43,41 +45,44 @@
         <strong><p><%= @bet.finish_at %></p></strong>
         </div>
       </div>
-      <div class="row row-margin text-center text-align">
-        <div class="flex_odd padded-text">
-          <div>
-            <p><%= link_to "OUI", "#", class: "btn btn-default bet_button" %></p>
-            <p>cote1</p>
-          </div>
-          <div>
-            <p><%= link_to "NUL", "#", class: "btn btn-default bet_button" %></p>
-            <p>cote2</p>
-          </div>
-          <div>
-            <p><%= link_to "NON", "#", class: "btn btn-default bet_button" %></p>
-            <p>cote3</p>
-          </div>
-        </div>
-      </div>
-      <div class="row bet_amount_background ">
-        <div class="padded-text">
-          <p>Lache ton fric :</p>
-          <br>
-          <div class="input-group spinner">
-            <div class="input-group-btn">
-             <%= link_to "-", "#", class: "btn btn-default spinner-minus" %>
-            </div>
-            <input type="text" class="form-control" value="0">
-            <div class="input-group-btn">
-              <%= link_to "+", "#", class: "btn btn-default spinner-plus" %>
-              <%= link_to "ALL IN", "#", class: "btn btn-default spinner-all-in" %>
-            </div>
-          </div>
-          <div class="margin-button">
-          <%= link_to "Parier", "#", { class: "navbar-wagon-item navbar-wagon-button btn" } %>
+
+
+      <%= simple_form_for @user_choice do |f| %>
+        <div class="row row-margin text-center text-align">
+          <div class="flex_odd padded-text">
+
+            <% @bet.choices.each do |choice| %>
+              <div class="bet_button">
+                <%= f.radio_button :choice, choice.id %>
+                <label for="user_choice_choice_<%= choice.id %>">
+                  <i class="fa fa-check"></i>
+                  <%= choice.title %>
+                </label>
+              </div>
+            <% end %>
           </div>
         </div>
-      </div>
+        <div class="row bet_amount_background ">
+          <div class="padded-text">
+            <p>Lache ton fric :</p>
+            <br>
+            <div class="input-group spinner">
+              <div class="input-group-btn">
+               <%= link_to "-", "#", class: "btn btn-default spinner-minus" %>
+              </div>
+              <%= f.text_field :bet_amount, class: "form-control" %>
+              <div class="input-group-btn">
+                <%= link_to "+", "#", class: "btn btn-default spinner-plus" %>
+                <%= link_to "ALL IN", "#", class: "btn btn-default spinner-all-in" %>
+              </div>
+            </div>
+            <div class="margin-button">
+            <%= link_to "Parier", "#", { class: "navbar-wagon-item navbar-wagon-button btn" } %>
+            <%= f.button :submit %>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

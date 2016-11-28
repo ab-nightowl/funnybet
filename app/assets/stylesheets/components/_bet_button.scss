@@ -1,0 +1,24 @@
+.bet_button {
+
+  input {
+    display: none;
+  }
+  label {
+    cursor: pointer;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 15px 20px;
+    i {
+      display: none;
+    }
+  }
+
+  input:checked + label {
+    background: green;
+    color: white;
+    i {
+      display: inline;
+    }
+  }
+}
