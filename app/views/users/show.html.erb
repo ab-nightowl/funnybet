@@ -35,58 +35,35 @@
 <div class="container text-center borders">
   <div id="my-bets" class="tab-content">
     <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-3 borders">
-        <h4>Publics</h4>
-          <div class="dashboard-card">
-              <% current_user.bets.each do |bet| %>
-                <% if @bet.finish_at > DateTime.now %>
-                    "<%= @bet.title %>"
-                <% end %>
-              <% end %>
-            <li><%= rand(1..100) %> Pts misé(s)</li>
-          </div>
-          <div class="dashboard-card">
-            "<%= Bet.all.sample.title %>"
-            <li><%= rand(1..100) %> Pts misé(s)</li>
-          </div>
-          <div class="dashboard-card">
-            "<%= Bet.all.sample.title %>"
-            <li><%= rand(1..100) %> Pts misé(s)</li>
-          </div>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-3 borders">
-        <h4>Privés</h4>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-3 borders">
+      <div class="col-xs-12 col-sm-6 col-md-6 borders">
         <h4>En cours</h4>
-          <div class="dashboard-card">
-            "<%= Bet.all.sample.title %>"
-            <li><%= rand(1..100) %> Pts misé(s)</li>
-          </div>
-          <div class="dashboard-card">
-            "<%= Bet.all.sample.title %>"
-            <li><%= rand(1..100) %> Pts misé(s)</li>
-          </div>
-          <div class="dashboard-card">
-            "<%= Bet.all.sample.title %>"
-            <li><%= rand(1..100) %> Pts misé(s)</li>
-          </div>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-3 borders">
-        <h4>Terminés</h4>
-        <div class="dashboard-card-finish">
         <% current_user.bets.each do |bet| %>
-          <% if @bet.finish_at <= DateTime.now %>
-              "<%= @bet.title %>"
-              <p> <%= link_to 'Valider le pari', bet_path(bet), class: "btn btn-dashboard"%> </p>
-              <div class="texthelp">
-                 <p>Le pari est terminé, vous devez le validexr en donnant le resultat.</p>
-              </div>
+          <% if bet.on_going? %>
+            <div class="dashboard-card">
+              "<%= bet.title %>"
+            </div>
           <% end %>
         <% end %>
-
-
-        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-6 borders">
+        <h4>Terminés</h4>
+        <% @bets.each do |bet| %>
+          <% if bet.finished? %>
+            <% if bet.user == current_user %>
+              <div class="dashboard-card-finish">
+                "<%= bet.title %>"
+                <p> <%= link_to 'Valider le pari', bet_path(bet), class: "btn btn-dashboard"%> </p>
+                <div class="texthelp">
+                  <p>Vous devez valider votre pari en donnant son résultat</p>
+                </div>
+              </div>
+            <% else %>
+                <div class="dashboard-card-finish-yours">
+                  "<%= bet.title %>"
+                </div>
+            <% end %>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </div>

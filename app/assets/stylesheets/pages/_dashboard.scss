@@ -16,7 +16,7 @@
 }
 
 .texthelp {
-  font-size: 6px;
+  font-size: 10px;
   font-style: italic;
 }
 
@@ -129,6 +129,25 @@
     margin-top: 20px;
 
   }
+
+
 }
 
+.dashboard-card-finish-yours {
+    border-radius: $border-radius-small;
+    box-shadow: 0 1px 4px rgba(0,0,0,.23);
+    background-color: white;
+    margin-bottom: 20px;
+    position: relative;
+    height: 160px;
+    max-width: 245px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+    margin-top: 30px;
+    li {
+    list-style: none;
+    margin-top: 20px;
+  }
+}
 

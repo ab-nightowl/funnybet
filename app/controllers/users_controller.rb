@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   before_action :find_user, only: [:show]
 
   def show
+    user = User.find(params[:id])
+    @bets = Bet.where(user: user) + UserChoice.where(user: user).map { |user_choice| user_choice.choice.bet }
   end
 
 
@@ -11,6 +13,8 @@ class UsersController < ApplicationController
   def find_user
     @user = User.find(params[:id])
   end
+
+
 
 
   def user_params
