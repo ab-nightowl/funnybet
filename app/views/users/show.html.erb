@@ -70,6 +70,13 @@
       </div>
       <div class="col-xs-12 col-sm-6 col-md-3 borders">
         <h4>Terminés</h4>
+        <div class="dashboard-card-finish">
+            "<%= Bet.all.sample.title %>"
+            <p> <%= link_to 'Valider le pari', bet_path, class: "btn btn-dashboard"%> </p>
+            <div class="texthelp">
+               <p>Le pari est terminé, vous devez le valider en donnant le resultat.</p>
+            </div>
+        </div>
       </div>
     </div>
   </div>
