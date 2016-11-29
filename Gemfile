@@ -10,6 +10,7 @@ gem 'devise'
 gem 'redis'
 gem 'cocoon'
 gem 'omniauth-facebook'
+gem 'faker'
 
 gem 'cloudinary', '1.1.0'
 gem "attachinary", github: "assembler/attachinary"
@@ -34,7 +35,6 @@ end
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
-  gem 'faker'
 
   gem 'pry-byebug'
   gem 'pry-rails'
