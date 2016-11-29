@@ -31,9 +31,15 @@ class BetsController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
+    if @bet.save
+      redirect_to bet_path(@bet)
+    else
+      render :edit
+    end
   end
 
 
