@@ -1,5 +1,5 @@
 .btn-treehouse {
-  color: $blue;
+
   padding: 8px 10px;
   border-radius: 2px;
   font-weight: bold;
@@ -11,4 +11,20 @@
   background: $blue;
   text-decoration: none;
   color: white;
+}
+
+.btn-dashboard {
+  color: white;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-weight: lighter;
+  margin-top: 15px;
+  background-color: #65CC50;
+}
+
+.btn-dashboard:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: white;
+  background-color: #5190F0;
 }
