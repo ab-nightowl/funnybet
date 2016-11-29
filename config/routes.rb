@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get "rank", to: "pages#rank"
   resources :users, only: [:show]
-  resources :bets, only: [:index, :show, :new, :create, :edit, :update]
-
-  resources :user_choices, only: [:create]
+  resources :bets, only: [:index, :show, :new, :create, :edit, :update] do
+    resources :user_choices, only: [:create]
+  end
 end

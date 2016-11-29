@@ -47,7 +47,7 @@
       </div>
 
 
-      <%= simple_form_for @user_choice do |f| %>
+      <%= simple_form_for @user_choice, url: bet_user_choices_path(@bet), method: :post do |f| %>
         <div class="row row-margin text-center text-align">
           <div class="flex_odd padded-text">
 
@@ -58,13 +58,14 @@
                   <i class="fa fa-check"></i>
                   <%= choice.title %>
                 </label>
+                  <p><%= choice.odd %></p>
               </div>
             <% end %>
           </div>
         </div>
         <div class="row bet_amount_background ">
           <div class="padded-text">
-            <p>Lache ton fric :</p>
+            <p>Choisir une mise :</p>
             <br>
             <div class="input-group spinner">
               <div class="input-group-btn">
@@ -77,8 +78,7 @@
               </div>
             </div>
             <div class="margin-button">
-            <%= link_to "Parier", "#", { class: "navbar-wagon-item navbar-wagon-button btn" } %>
-            <%= f.button :submit %>
+              <%= f.button :submit, "Parier", class: "navbar-wagon-item navbar-wagon-button btn" %>
             </div>
           </div>
         </div>

@@ -23,10 +23,10 @@ class BetsController < ApplicationController
 
     if @bet.save
       flash[:notice] = "Ton pari a été créé"
-      redirect_to bet_path(@bet)
+      redirect_to @bet
     else
       flash[:alert] = "Ton pari n'est pas créé"
-      render @bet
+      render :new
     end
   end
 
@@ -44,6 +44,6 @@ class BetsController < ApplicationController
   end
 
   def bet_params
-    params.require(:bet).permit(:title, :description, :challenge_title, :challenge, :finish_at, choices_attributes: [:title, :_destroy])
+    params.require(:bet).permit(:title, :description, :challenge_title, :challenge, :finish_at, :category_id, choices_attributes: [:title, :_destroy])
   end
 end

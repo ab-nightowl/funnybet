@@ -3,7 +3,6 @@ class Choice < ApplicationRecord
   has_many :user_choices, dependent: :destroy
 
   validates :title, presence: true
-  # validates :odds
 
   attr_writer :position
 
@@ -12,6 +11,8 @@ class Choice < ApplicationRecord
     choice_amount = 0
     bet.user_choices.each { |user_choice| total_amount += user_choice.bet_amount }
     self.user_choices.each { |user_choice| choice_amount += user_choice.bet_amount }
-    (1 - choice_amount.to_f / total_amount) * 5
+    odd = (1 - choice_amount.to_f / total_amount) * 5
+
+    odd.nan? ? 2 : odd
   end
 end
