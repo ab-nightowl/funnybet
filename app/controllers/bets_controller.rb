@@ -31,7 +31,11 @@ class BetsController < ApplicationController
   end
 
   def edit
-
+    unless current_user.bets.include?(@bet)
+      @user_choice = UserChoice.new
+      flash[:alert] = "Tu n'es pas autorisé à éditer ce pari"
+      render :show
+    end
   end
 
   def update
