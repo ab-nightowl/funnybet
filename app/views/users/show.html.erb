@@ -30,7 +30,11 @@
       <div class="col-xs-12 col-sm-6 col-md-3 borders">
         <h4>Publics</h4>
           <div class="dashboard-card">
-            "<%= Bet.all.sample.title %>"
+              <% current_user.bets.each do |bet| %>
+                <% if @bet.finish_at > DateTime.now %>
+                    "<%= @bet.title %>"
+                <% end %>
+              <% end %>
             <li><%= rand(1..100) %> Pts misé(s)</li>
           </div>
           <div class="dashboard-card">
@@ -62,6 +66,19 @@
       </div>
       <div class="col-xs-12 col-sm-6 col-md-3 borders">
         <h4>Terminés</h4>
+        <div class="dashboard-card-finish">
+        <% current_user.bets.each do |bet| %>
+          <% if @bet.finish_at <= DateTime.now %>
+              "<%= @bet.title %>"
+              <p> <%= link_to 'Valider le pari', bet_path(bet), class: "btn btn-dashboard"%> </p>
+              <div class="texthelp">
+                 <p>Le pari est terminé, vous devez le validexr en donnant le resultat.</p>
+              </div>
+          <% end %>
+        <% end %>
+
+
+        </div>
       </div>
     </div>
   </div>
@@ -113,6 +130,13 @@
       </div>
       <div class="col-xs-12 col-sm-6 col-md-6 borders">
         <h4>Terminés</h4>
+          <div class="dashboard-card-finish">
+              "<%= Bet.all.sample.challenge_title %>"
+              <p> <%= link_to 'Valider le challenge', bet_path, class: "btn btn-dashboard"%> </p>
+              <div class="texthelp">
+                 <p>Vous devez relever le defi et poster la preuve pour sauver vos points!</p>
+              </div>
+          </div>
       </div>
     </div>
   </div>
