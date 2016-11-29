@@ -11,6 +11,11 @@
   margin-top: 20px;
 }
 
+.edit-icon {
+  margin-top: 15px;
+  margin-right: 15px;
+}
+
 .description_background{
   background: white;
   min-height: 300px;
@@ -53,6 +58,7 @@
   box-shadow: 5px 3px 5px lightgrey;
   display: flex;
   flex-direction: column;
+
   min-height: 200px;
   color: black;
   border-top: 3px solid #F3AC3C;

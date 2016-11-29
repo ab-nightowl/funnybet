@@ -1,0 +1,8 @@
+
+<% if user.facebook_picture_url %>
+  <%= image_tag user.facebook_picture_url, class: "avatar-#{size}  dropdown-toggle center-block", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+<% elsif user.photo %>
+  <%= cl_image_tag user.photo.path, class: "avatar-#{size} dropdown-toggle center-block", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+<% else %>
+  <%= image_tag "clown.png", class: "avatar-#{size} dropdown-toggle center-block", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+<% end %>
