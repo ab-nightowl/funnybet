@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   mount Attachinary::Engine => "/attachinary"
   root to: 'pages#home'
   resources :users, only: [:show]
-  resources :bets, only: [:index, :show, :new, :create, :edit, :update]
-
-  resources :user_choices, only: [:create]
+  resources :bets, only: [:index, :show, :new, :create, :edit, :update] do
+    resources :user_choices, only: [:create]
+  end
 end

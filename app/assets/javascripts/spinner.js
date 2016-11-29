@@ -1,5 +1,5 @@
-var MAX = 10;
-var MIN = 0;
+var MAX = 100;
+var MIN = 5;
 
 $('.spinner .spinner-plus').click(function(e){
   e.preventDefault();
