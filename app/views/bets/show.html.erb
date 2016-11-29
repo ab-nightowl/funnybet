@@ -33,12 +33,20 @@
       </div>
     </div>
     <div class="col-xs-9">
-      <div class="row row-margin text-center description_background padded-text">
-        <h2><%= @bet.title %></h2>
-        <p><%= @bet.description %></p>
-        <hr>
-         <h3><%= @bet.challenge_title %></h3>
-         <p><%= @bet.challenge %></p>
+      <div class="row row-margin description_background">
+        <div class="text-right edit-icon">
+          <% if @bet.user == current_user %>
+            <%= link_to '<i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i>'.html_safe, edit_bet_path %>
+          <% end %>
+        </div>
+
+        <div class="text-center padded-text">
+          <h2><%= @bet.title %></h2>
+          <p><%= @bet.description %></p>
+          <hr>
+          <h3><%= @bet.challenge_title %></h3>
+          <p><%= @bet.challenge %></p>
+        </div>
       </div>
       <div class="row row-margin text-center">
         <div class="deadline padded-text">
