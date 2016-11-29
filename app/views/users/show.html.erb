@@ -1,21 +1,13 @@
 <div class="wrapperuser padded-top text-center">
   <ul>
-    <% avatar_url = current_user.facebook_picture_url || "clown.png" %>
 
-      <% if avatar_url == current_user.facebook_picture_url %>
-        <%= image_tag avatar_url, class: "avatar-large dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-      <% elsif current_user.photo == nil %>
-        <%= image_tag avatar_url, class: "avatar-large dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-      <% else %>
-        <%= cl_image_tag current_user.photo.path, class: "avatar-large dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-      <% end %>
-
+    <%= render "shared/avatar", user: current_user, size: "large" %>
+    <br>
     <li><%= @user.user_name %></li>
-    <li><%= @user.last_name %></li>
-    <li><%= @user.first_name %></li>
+    <br>
     <div>
       <% if @user == current_user %>
-        <%= link_to "Edit my profile", edit_user_registration_path %>
+        <%= link_to "Editer mon profil", edit_user_registration_path %>
       <% end %>
     </div>
   </ul>
@@ -24,7 +16,7 @@
       <h3>Mes paris </h3>
     </a>
     <a class="tab" data-target="#my-stats">
-      <h3>Mes stats</h3>
+      <h3>Mes statistiques</h3>
     </a>
     <a class="tab" data-target="#my-challenges">
       <h3>Mes challenges</h3>
