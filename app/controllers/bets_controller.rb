@@ -26,14 +26,20 @@ class BetsController < ApplicationController
       redirect_to bet_path(@bet)
     else
       flash[:alert] = "Ton pari n'est pas créé"
-      render @bet
+      render :new
     end
   end
 
   def edit
+
   end
 
   def update
+    if @bet.save
+      redirect_to bet_path(@bet)
+    else
+      render :edit
+    end
   end
 
 

@@ -1,0 +1,57 @@
+<div class="col-xs-12">
+
+  <%= simple_form_for @bet do |f| %>
+
+    <div class="row row-margin form_background" >
+      <div class="form-inputs text-decoration padded-text text-center">
+
+        <div class="">
+          <%= f.input :title, label: "Donne un titre à ton pari" %>
+          <%= f.input :description, label: "Pour plus de détails... (si tu veux)" %>
+          <%= f.association :category, label: "Catégorie" %>
+        </div>
+
+        <p class="padded-p"><strong>Choix de réponses :</strong></p>
+
+        <div>
+          <% if @bet.errors.messages[:choices].any? %>
+            <div class="text-danger">
+              <%= @bet.errors.messages[:choices].join(', ') %>
+            </div>
+          <% end %>
+
+          <div id="choices">
+            <%= f.simple_fields_for(:choices) do |choice, index| %>
+              <%= render 'choice_fields', f: choice %>
+            <% end %>
+
+            <div class="links">
+              <%= link_to_add_association 'Ajouter un choix', f, :choices %>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="padded-h3">Le gage</h3>
+
+        <div>
+          <%= f.input :challenge_title, label: "Donne une indication sur le gage pour le(s) perdant(s) ;)" %>
+          <%= f.input :challenge, label: "C'est quoi ton gage ?" %>
+        </div>
+
+        <h3 class="padded-h3">Dealine du pari</h3>
+
+
+        <div>
+          <%= f.input :finish_at, label: "Donne une date de cloture du pari" %>
+
+          <div class="btn-margin">
+            <%= f.button :submit, "Créer !", class: "bet_new_button" %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  <% end %>
+
+</div>
