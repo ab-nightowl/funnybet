@@ -6,8 +6,6 @@ Choice.destroy_all
 UserChoice.destroy_all
 
 
-Faker::Config.locale = 'fr'
-
 users = []
 4.times do
   users << User.create!(
