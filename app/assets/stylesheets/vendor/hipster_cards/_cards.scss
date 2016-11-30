@@ -48,6 +48,7 @@
       justify-content: space-around;
       display: flex;
       height: 300px;
+      font-family: 'Josefin Sans', sans-serif;
     }
 
     .social-line{
@@ -123,7 +124,8 @@
 
 
     .description{
-        font-size: $font-paragraph;
+        font-size: 23px;
+        font-family: $base-font;
         color: white;
     }
 
