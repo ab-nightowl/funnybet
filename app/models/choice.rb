@@ -11,9 +11,18 @@ class Choice < ApplicationRecord
     choice_amount = 0
     bet.user_choices.each { |user_choice| total_amount += user_choice.bet_amount }
     self.user_choices.each { |user_choice| choice_amount += user_choice.bet_amount }
-    odd = (1 - choice_amount.to_f / total_amount) * 5
+    odd = (1 - choice_amount.to_f / total_amount) * 4 + 1
 
-    odd.nan? ? 2 : odd
+    odd.nan? ? 1 : odd
+  end
+
+  def gain(amount)
+    total_amount = amount
+    choice_amount = amount
+    bet.user_choices.each { |user_choice| total_amount += user_choice.bet_amount }
+    self.user_choices.each { |user_choice| choice_amount += user_choice.bet_amount }
+    odd = (1 - choice_amount.to_f / total_amount) * 4 + 1
+    (odd * amount).round(2)
   end
 
   def winning_status

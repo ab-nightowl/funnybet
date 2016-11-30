@@ -4,6 +4,7 @@
     <%= render "shared/avatar", user: current_user, size: "large" %>
     <br>
     <li><%= @user.user_name %></li>
+    <li><strong> <%= starting_amount = 100 %> Pts</strong></li>
     <br>
     <div>
       <% if @user == current_user %>

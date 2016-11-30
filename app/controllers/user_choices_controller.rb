@@ -2,6 +2,7 @@ class UserChoicesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:create]
 
   def create
+
     @bet = Bet.find(params[:bet_id])
 
     if user_choice_params[:choice]
