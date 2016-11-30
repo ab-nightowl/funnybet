@@ -10,7 +10,7 @@ $('.spinner .spinner-plus').click(function(e){
   if (value < MAX) {
     value = value + 1;
   }
-  $('.spinner input').val(value);
+  $('.spinner input').val(value).change();
 });
 
 $('.spinner .spinner-minus').click(function(e){
@@ -22,12 +22,12 @@ $('.spinner .spinner-minus').click(function(e){
   if (value > MIN) {
     value = value - 1;
   }
-  $('.spinner input').val(value);
+  $('.spinner input').val(value).change();
 });
 
 $('.spinner .spinner-all-in').click(function(e){
   e.preventDefault();
-  $('.spinner input').val(MAX);
+  $('.spinner input').val(MAX).change();
 });
 
 $('.spinner input').change(function() {

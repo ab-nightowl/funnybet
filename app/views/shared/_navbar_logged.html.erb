@@ -22,15 +22,7 @@
     <div class="navbar-wagon-item">
       <div class="dropdown">
 
-        <% avatar_url = current_user.facebook_picture_url || "clown.png" %>
-
-        <% if avatar_url == current_user.facebook_picture_url %>
-          <%= image_tag avatar_url, class: "avatar-medium dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-        <% elsif current_user.photo == nil %>
-          <%= image_tag avatar_url, class: "avatar-medium dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-        <% else %>
-          <%= cl_image_tag current_user.photo.path, class: "avatar-medium dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-        <% end %>
+        <%= render "shared/avatar", user: current_user, size: "medium" %>
 
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>
