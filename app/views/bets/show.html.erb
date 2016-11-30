@@ -76,6 +76,17 @@
 
               <% else %>
 
+                <% @bet.choices.each do |choice| %>
+                <div class="bet-button">
+                  <%= f.radio_button :choice, choice.id %>
+                  <label for="user_choice_choice_<%= choice.id %>">
+                    <i class="fa fa-check"></i>
+                    <%= choice.title %>
+                  </label>
+                    <p><%= choice.odd %></p>
+                </div>
+              <% end %>
+
                 <div id="validate-bet-div">
                   <%= f.button :submit, "Valider le pari", class: "banner-wagon-button bet-btn" %>
                 </div>
