@@ -29,13 +29,17 @@
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-md-6 borders">
         <h4>En cours</h4>
-        <% current_user.bets.each do |bet| %>
+        <% @bets.each do |bet| %>
           <% if bet.on_going? %>
-            <div class="dashboard-card">
-              "<%= bet.title %>"
-            </div>
+            <% @user_choices.each do |user_choice| %>
+              <div class="dashboard-card">
+                "<%= bet.title %>"
+                <li><%= user_choice.bet_amount %> Pts misé(s)</li>
+              </div>
+            <% end %>
           <% end %>
         <% end %>
+
       </div>
       <div class="col-xs-12 col-sm-6 col-md-6 borders">
         <h4>Terminés</h4>
@@ -50,9 +54,12 @@
                 </div>
               </div>
             <% else %>
-                <div class="dashboard-card-finish-yours">
+              <% @user_choices.each do |user_choice| %>
+                <div class="dashboard-card">
                   "<%= bet.title %>"
+                  <li><%= user_choice.bet_amount %> Pts misé(s)</li>
                 </div>
+              <% end %>
             <% end %>
           <% end %>
         <% end %>
@@ -63,25 +70,38 @@
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-md-3 borders">
         <h4>Paris gagnés</h4>
-          <div class="dashboard-card">
-            "<%= Bet.all.sample.title %>"
-            <li><%= rand(1..100) %> Pts misé(s)</li>
-          </div>
-          <div class="dashboard-card">
-            "<%= Bet.all.sample.title %>"
-            <li><%= rand(1..100) %> Pts misé(s)</li>
-          </div>
+        <% @bets.each do |bet| %>
+          <% @user_choices.each do |user_choice| %>
+            <% @bet_choices.each do |bet_choice| %>
+                <% if bet.finished? && (user_choice == bet_choice.winning) %>
+                  <% if bet.user != current_user %>
+                    <div class="dashboard-card-finish">
+                      "<%= bet.title %>"
+                      <li><%= user_choice.bet_amount %> Pts misé(s)</li>
+                    </div>
+                  <% end %>
+                <% end %>
+              <% end %>
+            <% end %>
+        <% end %>
       </div>
+
       <div class="col-xs-12 col-sm-6 col-md-3 borders">
         <h4>Paris perdus</h4>
-          <div class="dashboard-card">
-            "<%= Bet.all.sample.title %>"
-            <li><%= rand(1..100) %> Pts misé(s)</li>
-          </div>
-          <div class="dashboard-card">
-            "<%= Bet.all.sample.title %>"
-            <li><%= rand(1..100) %> Pts misé(s)</li>
-          </div>
+        <% @bets.each do |bet| %>
+          <% @user_choices.each do |user_choice| %>
+            <% @bet_choices.each do |bet_choice| %>
+                <% if bet.finished? && (user_choice == !bet_choice.winning) %>
+                  <% if bet.user != current_user %>
+                    <div class="dashboard-card-finish">
+                      "<%= bet.title %>"
+                      <li><%= user_choice.bet_amount %> Pts misé(s)</li>
+                    </div>
+                  <% end %>
+                <% end %>
+              <% end %>
+            <% end %>
+        <% end %>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-3 borders">
         <h4>Taux de réussite</h4>

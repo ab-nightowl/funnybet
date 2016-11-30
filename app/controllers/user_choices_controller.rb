@@ -6,7 +6,7 @@ class UserChoicesController < ApplicationController
 
     if user_choice_params[:choice]
       @choice = Choice.find(user_choice_params[:choice])
-      @user_choice = @bet.user_choices.create(choice: @choice, bet_amount: user_choice_params[:bet_amount])
+      @user_choice = UserChoice.create(choice: @choice, bet_amount: user_choice_params[:bet_amount], user: current_user)
       flash[:notice] = "Ton pari a bien été enregistré"
       redirect_to @bet
     else

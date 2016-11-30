@@ -15,4 +15,20 @@ class Choice < ApplicationRecord
 
     odd.nan? ? 2 : odd
   end
+
+  def winning_status
+    if self.winning == true
+      "win"
+    else
+      "loss"
+    end
+  end
+
+  def win?
+    winning_status == "win"
+  end
+
+  def loss?
+    winning_status == "loss"
+  end
 end
