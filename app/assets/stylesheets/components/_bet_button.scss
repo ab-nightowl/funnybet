@@ -1,4 +1,7 @@
-.bet_button {
+.bet-button {
+  flex: 0 0 20%;
+  align-items: center;
+  margin-top: 15px;
 
   input {
     display: none;
@@ -15,6 +18,22 @@
   }
 
   input:checked + label {
+    background: green;
+    color: white;
+    i {
+      display: inline;
+    }
+  }
+}
+
+.bet-button-winning {
+  flex: 0 0 20%;
+  align-items: center;
+  margin-top: 15px;
+
+  div {
+    border: 1px solid #ccc;
+    padding: 15px 20px;
     background: green;
     color: white;
     i {

@@ -46,22 +46,58 @@
         <div class="row row-margin text-center text-align">
           <div class="flex_odd padded-text">
 
-            <% @bet.choices.each do |choice| %>
-              <div class="bet_button">
-                <%= f.radio_button :choice, choice.id %>
-                <label for="user_choice_choice_<%= choice.id %>">
-                  <i class="fa fa-check"></i>
-                  <%= choice.title %>
-                </label>
-                  <p><%= choice.odd %></p>
-              </div>
-            <% end %>
+            <% if @bet.user == current_user %>
 
-          </div>
+              <% if @bet.choices.where(winning: true).any? %>
 
-          <div>
-            <% if @bet.user = current_user %>
-                <%= link_to "Valider le pari", "#", { class: "banner-wagon-button" } %>
+                <% @bet.choices.each do |choice| %>
+
+                  <% if choice.is_winning? %>
+                    <!-- Je veux que le choix validé reste 'check' -->
+                    <div class="bet-button-winning ">
+                      <div>
+                        <i class="fa fa-check"></i>
+                        <%= choice.title %>
+                      </div>
+                      <p><%= choice.odd %></p>
+                    </div>
+
+                  <% else %>
+
+                    <div class="bet-button">
+                      <%= f.radio_button :choice, choice.id %>
+                      <label for="user_choice_choice_<%= choice.id %>">
+                        <i class="fa fa-check"></i>
+                        <%= choice.title %>
+                      </label>
+                        <p><%= choice.odd %></p>
+                    </div>
+
+                  <% end %>
+                <% end %>
+
+              <% else %>
+
+                <div id="validate-bet-div">
+                  <%= f.button :submit, "Valider le pari", class: "banner-wagon-button bet-btn" %>
+                </div>
+
+              <% end %>
+
+
+            <% else %>
+
+              <% @bet.choices.each do |choice| %>
+                <div class="bet-button">
+                  <%= f.radio_button :choice, choice.id %>
+                  <label for="user_choice_choice_<%= choice.id %>">
+                    <i class="fa fa-check"></i>
+                    <%= choice.title %>
+                  </label>
+                    <p><%= choice.odd %></p>
+                </div>
+              <% end %>
+
             <% end %>
           </div>
         </div>
@@ -83,7 +119,7 @@
                 </div>
               </div>
               <div class="margin-button">
-                <%= f.button :submit, "Parier", class: "navbar-wagon-item navbar-wagon-button btn" %>
+                <%= f.button :submit, "Parier", class: "banner-wagon-button bet-btn" %>
               </div>
             </div>
           </div>
