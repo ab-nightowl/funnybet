@@ -32,12 +32,36 @@
   margin-top: 15px;
 
   div {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+
+    color: white;
+    background: green;
     border: 1px solid #ccc;
     padding: 15px 20px;
-    background: green;
-    color: white;
+
     i {
       display: inline;
     }
+  }
+}
+
+.bet-button-losing {
+  flex: 0 0 20%;
+  align-items: center;
+  margin-top: 15px;
+
+  div {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 15px 20px;
   }
 }

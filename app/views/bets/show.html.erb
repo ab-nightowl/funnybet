@@ -54,7 +54,7 @@
 
                   <% if choice.is_winning? %>
                     <!-- Je veux que le choix validé reste 'check' -->
-                    <div class="bet-button-winning ">
+                    <div class="bet-button-winning">
                       <div>
                         <i class="fa fa-check"></i>
                         <%= choice.title %>
@@ -64,13 +64,11 @@
 
                   <% else %>
 
-                    <div class="bet-button">
-                      <%= f.radio_button :choice, choice.id %>
-                      <label for="user_choice_choice_<%= choice.id %>">
-                        <i class="fa fa-check"></i>
+                    <div class="bet-button-losing">
+                      <div>
                         <%= choice.title %>
-                      </label>
-                        <p><%= choice.odd %></p>
+                      </div>
+                      <p><%= choice.odd %></p>
                     </div>
 
                   <% end %>
