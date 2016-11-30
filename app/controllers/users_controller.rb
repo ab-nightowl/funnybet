@@ -11,6 +11,11 @@ class UsersController < ApplicationController
     @bet_choices = Bet.where(user: user).map { |bet| bet.choices }.flatten
   end
 
+  def ranking
+    @user = User.first
+    @rank = User.all(:order => "starting_amount").index(@user)
+  end
+
 
   private
 
