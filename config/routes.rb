@@ -7,4 +7,10 @@ Rails.application.routes.draw do
   resources :bets, only: [:index, :show, :new, :create, :edit, :update] do
     resources :user_choices, only: [:create]
   end
+
+  resources :choices, only: [] do
+    member do
+      post "gains"
+    end
+  end
 end

@@ -1,0 +1,14 @@
+$('#user_choice_bet_amount').change(function(){
+  var bet_amount = $(this).val();
+  // call ajax
+  var choice_id = $('#choices input:checked').attr("value");
+  var url = "/choices/" + choice_id + "/gains";
+  $.ajax({
+    method: "post",
+    url: url,
+    data: { bet_amount: bet_amount },
+    success: function(data){
+      $("#possible-gains").html(data.gains);
+    }
+  });
+});

@@ -5,10 +5,16 @@ class UsersController < ApplicationController
   def show
     user = User.find(params[:id])
     @bets = Bet.where(user: user) + UserChoice.where(user: user).map { |user_choice| user_choice.choice.bet }
+
+    @user_choices = Bet.where(user: user).map { |bet| bet.user.user_choices }.flatten
+
+    @bet_choices = Bet.where(user: user).map { |bet| bet.choices }.flatten
   end
 
 
   private
+
+
 
   def find_user
     @user = User.find(params[:id])
