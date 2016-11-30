@@ -56,27 +56,40 @@
                   <p><%= choice.odd %></p>
               </div>
             <% end %>
+
+          </div>
+
+          <div>
+            <% if @bet.user = current_user %>
+                <%= link_to "Valider le pari", "#", { class: "banner-wagon-button" } %>
+            <% end %>
           </div>
         </div>
-        <div class="row bet_amount_background ">
-          <div class="padded-text">
-            <p>Choisir une mise :</p>
-            <br>
-            <div class="input-group spinner">
-              <div class="input-group-btn">
-               <%= link_to "-", "#", class: "btn btn-default spinner-minus" %>
+
+        <% if @bet.user != current_user %>
+
+          <div class="row bet_amount_background ">
+            <div class="padded-text">
+              <p>Choisir une mise :</p>
+              <br>
+              <div class="input-group spinner">
+                <div class="input-group-btn">
+                 <%= link_to "-", "#", class: "btn btn-default spinner-minus" %>
+                </div>
+                <%= f.text_field :bet_amount, class: "form-control" %>
+                <div class="input-group-btn">
+                  <%= link_to "+", "#", class: "btn btn-default spinner-plus" %>
+                  <%= link_to "ALL IN", "#", class: "btn btn-default spinner-all-in" %>
+                </div>
               </div>
-              <%= f.text_field :bet_amount, class: "form-control" %>
-              <div class="input-group-btn">
-                <%= link_to "+", "#", class: "btn btn-default spinner-plus" %>
-                <%= link_to "ALL IN", "#", class: "btn btn-default spinner-all-in" %>
+              <div class="margin-button">
+                <%= f.button :submit, "Parier", class: "navbar-wagon-item navbar-wagon-button btn" %>
               </div>
-            </div>
-            <div class="margin-button">
-              <%= f.button :submit, "Parier", class: "navbar-wagon-item navbar-wagon-button btn" %>
             </div>
           </div>
-        </div>
+
+        <% end %>
+
       <% end %>
     </div>
   </div>
