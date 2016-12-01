@@ -6,7 +6,8 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-    <%= link_to "Classement", rank_path, { class: "navbar-wagon-item navbar-wagon-link" } %>
+    Vous avez <%= current_user.points %> points
+    <%= link_to "Voir le Classement", rank_path, { class: "navbar-wagon-item navbar-wagon-link" } %>
     <!-- Profile picture and dropdown -->
     <div class="navbar-wagon-item">
       <div class="dropdown">

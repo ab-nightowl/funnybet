@@ -33,12 +33,19 @@ class User < ApplicationRecord
   end
 
   def points
-    winning_choices = UserChoice.joins(:user, :choice).where(user: self).where(choices: { winning: true })
     points = 0
+
+    winning_choices = UserChoice.joins(:user, :choice).where(user: self).where(choices: { winning: true })
     winning_choices.each do |winning_choice|
       points += (winning_choice.choice.gain(winning_choice.bet_amount) - winning_choice.bet_amount)
     end
-    p = points.to_i - starting_amount.to_i
+
+    losing_choices = UserChoice.joins(:user, :choice).where(user: self).where(choices: { winning: false })
+    losing_choices.each do |losing_choice|
+      points -= losing_choice.bet_amount
+    end
+
+    p = points.to_i + starting_amount.to_i
     p > 0 ? p : 0
   end
 
