@@ -6,8 +6,8 @@
       <div class="form-inputs text-decoration padded-text text-center">
 
         <div class="">
-          <%= f.input :title, label: "Donne un titre à ton pari" %>
-          <%= f.input :description, label: "Pour plus de détails... (si tu veux)" %>
+          <%= f.input :title, :maxlength => 140, label: "Donne un titre à ton pari" %>
+          <%= f.input :description, :maxlength => 140, label: "Pour plus de détails... (si tu veux)" %>
           <%= f.association :category, label: "Catégorie" %>
         </div>
 
@@ -45,7 +45,7 @@
           <%= f.input :finish_at, label: "Donne une date de cloture du pari" %>
 
           <div class="btn-margin">
-            <%= f.button :submit, "Créer !", class: "bet_new_button" %>
+            <%= f.button :submit, "Créer !", class: "banner-wagon-button bet-btn" %>
           </div>
         </div>
 
