@@ -18,6 +18,9 @@
 
 .footer-links{
   font-family: $header-font;
+  li {
+    cursor: pointer;
+  }
 }
 
 .share-links {
@@ -27,7 +30,7 @@
 }
 .share-link {
   flex: 0 0 24%;
-  color: white;
+  color: $black;
   font-size: 18px;
   padding: 10px 0;
   text-align: center;

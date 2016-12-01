@@ -46,7 +46,7 @@
         <%= render "shared/bet_card", bet: bet %>
       <% end %>
       <div>
-        <%= link_to "Voir tous les paris", bets_path(@bets), { class: "navbar-wagon-item navbar-wagon-button btn" } %>
+        <%= link_to "Voir tous les paris", bets_path(@bets), class: "navbar-wagon-item navbar-wagon-button btn", id: "see-bets-btn" %>
       </div>
 
   </div>
