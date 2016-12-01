@@ -5,6 +5,7 @@
         <div class="row-margin profile-container">
           <%= render "shared/avatar", user: current_user, size: "large" %>
           <%= current_user.user_name %>
+          <p>Partage avec tes amis</p>
           <%= social_share_button_tag(@bet.title) %>
 
         </div>
@@ -137,7 +138,7 @@
                 <div class="input-group-btn">
                  <%= link_to "-", "#", class: "btn btn-warning spinner-minus" %>
                 </div>
-                <%= f.text_field :bet_amount, class: "form-control" %>
+                <%= f.text_field :bet_amount, class: "form-control", value: 1 %>
                 <div class="input-group-btn">
                   <%= link_to "+", "#", class: "btn btn-success spinner-plus" %>
                   <%= link_to "ALL IN", "#", class: "btn btn-default spinner-all-in" %>
