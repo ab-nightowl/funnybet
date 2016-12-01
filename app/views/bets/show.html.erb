@@ -5,7 +5,8 @@
         <div class="row-margin profile-container">
           <%= render "shared/avatar", user: current_user, size: "large" %>
           <%= current_user.user_name %>
-          <%= link_to "Add friends", "#" %>
+          <%= social_share_button_tag(@bet.title) %>
+
         </div>
       <% end %>
       <div class="div-scroll">
