@@ -1,16 +1,17 @@
 // Your footer style
 
 .footer-distributed {
-    background-color: #EDEDED;
-    box-shadow: 0, 1px, 1px, 0 rgba(0, 0, 0, 0.12);
-    box-sizing: border-box;
-    width: 100%;
-    font: bold 16px sans-serif;
-    text-align: left;
-    padding: 50px 60px;
-    margin-top: 80px;
-    overflow: hidden;
+  background-color: #9e9e9e;
+  box-shadow: 0, 1px, 1px, 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  font: bold 16px sans-serif;
+  text-align: left;
+  padding: 50px 90px;
+  overflow: hidden;
+
+  a {
+    color: white;
     text-decoration: none;
-
+  }
 }
-
