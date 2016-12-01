@@ -8,6 +8,7 @@ class BetsController < ApplicationController
 
   def show
     @user_choice = UserChoice.new
+    @hidden_challenge = @bet.user_choices.where(user: current_user).empty?
   end
 
   def new

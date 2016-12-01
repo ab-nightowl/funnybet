@@ -32,16 +32,18 @@
           <h2><%= @bet.title %></h2>
           <p><%= @bet.description %></p>
           <hr>
-          <p class="placeholder">CHALLENGE</p>
-          <h3><%= @bet.challenge_title %></h3>
-          <p><%= @bet.challenge %></p>
+            <p class="placeholder">CHALLENGE</p>
+            <h3><%= @bet.challenge_title %></h3>
+            <% if !@hidden_challenge %>
+              <p><%= @bet.challenge %></p>
+            <% end %>
         </div>
       </div>
       <div class="row row-margin text-center">
         <div class="deadline padded-text">
           <p class="placeholder">DEADLINE</p>
           <%= render "shared/deadline" %>
-        <!-- <strong><p><%= @bet.finish_at %></p></strong> -->
+       <strong><p><%= @bet.finish_at %></p></strong>
         </div>
       </div>
 
@@ -141,7 +143,6 @@
             </div>
           </div>
         <% end %>
-
       <% end %>
     </div>
   </div>
@@ -153,12 +154,13 @@
 
 <% content_for :timerinjs do %>
   <script>
-          function getTimeRemaining(endtime) {
+      function getTimeRemaining(endtime) {
         var t = Date.parse(endtime) - Date.parse(new Date());
         var seconds = Math.floor((t / 1000) % 60);
         var minutes = Math.floor((t / 1000 / 60) % 60);
         var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
         var days = Math.floor(t / (1000 * 60 * 60 * 24));
+
         return {
           'total': t,
           'days': days,
@@ -169,12 +171,6 @@
       }
 
       function initializeClock(id, endtime) {
-        var clock = document.getElementById(id);
-        var daysSpan = clock.querySelector('.days');
-        var hoursSpan = clock.querySelector('.hours');
-        var minutesSpan = clock.querySelector('.minutes');
-        var secondsSpan = clock.querySelector('.seconds');
-
         function updateClock() {
           var t = getTimeRemaining(endtime);
 
@@ -187,21 +183,21 @@
             clearInterval(timeinterval);
           }
         }
-
+        var clock = document.getElementById(id);
+        var daysSpan = clock.querySelector('.days');
+        var hoursSpan = clock.querySelector('.hours');
+        var minutesSpan = clock.querySelector('.minutes');
+        var secondsSpan = clock.querySelector('.seconds');
         updateClock();
         var timeinterval = setInterval(updateClock, 1000);
       }
 
-      var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
+      var timestamp = Date.parse("<%= @bet.finish_at %>");
+      var deadline = new Date(timestamp);
+
+      console.log(deadline);
+
       initializeClock('clockdiv', deadline);
-
-      var test = <%= @bet.finish_at %>
-
-      $( ".clockdiv" ).click(function() {
-        alert( test );
-      });
-
-
 
 
   </script>
