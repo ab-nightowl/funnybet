@@ -24,7 +24,7 @@
               <td><%= user.user_name %></td>
               <td><strong><%= rand(1..1000)%></strong></td>
               <td>41%</td>
-              <td><%= rand(1..1000)%></td>
+              <td> <%= user.user_choices.count %> </td>
             </tbody>
           <% end %>
         </table>
