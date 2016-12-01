@@ -47,8 +47,11 @@
       <div class="row row-margin text-center">
         <div class="deadline padded-text">
           <p class="placeholder">DEADLINE</p>
+          <% if  @bet.finished? %>
+          <h2>PARI TERMINÉ</h2>
+          <% else %>
           <%= render "shared/deadline" %>
-       <strong><p><%= @bet.finish_at %></p></strong>
+          <% end %>
         </div>
       </div>
 
@@ -131,29 +134,30 @@
         </div>
 
         <% if @bet.user != current_user %>
-
-          <div class="row bet_amount_background text-center">
-            <div class="padded-text">
-              <p class="placeholder">MISE</p>
-              <br>
-              <div class="input-group spinner">
-                <div class="input-group-btn">
-                 <%= link_to "-", "#", class: "btn btn-warning spinner-minus" %>
+          <% if not @bet.finished? %>
+            <div class="row bet_amount_background text-center">
+              <div class="padded-text">
+                <p class="placeholder">MISE</p>
+                <br>
+                <div class="input-group spinner">
+                  <div class="input-group-btn">
+                   <%= link_to "-", "#", class: "btn btn-warning spinner-minus" %>
+                  </div>
+                  <%= f.text_field :bet_amount, class: "form-control" %>
+                  <div class="input-group-btn">
+                    <%= link_to "+", "#", class: "btn btn-success spinner-plus" %>
+                    <%= link_to "ALL IN", "#", class: "btn btn-default spinner-all-in" %>
+                  </div>
                 </div>
-                <%= f.text_field :bet_amount, class: "form-control", value: 1 %>
-                <div class="input-group-btn">
-                  <%= link_to "+", "#", class: "btn btn-success spinner-plus" %>
-                  <%= link_to "ALL IN", "#", class: "btn btn-default spinner-all-in" %>
+                <div class="margin-button">
+
+                  <p>Total gains : <span id="possible-gains"></span></p>
+                  <%= f.button :submit, "Parier", class: "banner-wagon-button bet-btn" %>
+
                 </div>
-              </div>
-              <div class="margin-button">
-
-                <p>Total gains : <span id="possible-gains"></span></p>
-                <%= f.button :submit, "Parier", class: "banner-wagon-button bet-btn" %>
-
               </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
       <% end %>
     </div>
