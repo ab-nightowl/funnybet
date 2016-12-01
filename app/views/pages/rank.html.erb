@@ -14,110 +14,19 @@
               <th style="padding-left: 70px";>Nb. paris</th>
             </tr>
           </thead>
-          <tbody>
-            <td>1</td>
-            <td><%= render "shared/avatar", user: current_user, size: "large" %></td>
-            <td>Julien</td>
-            <td><strong><%= rand(1..1000)%></strong></td>
-            <td>41%</td>
-            <td><%= rand(1..1000)%></td>
-          </tbody>
-          <tbody>
-            <td>2</td>
-            <td><%= image_tag 'clown.png' , class: 'avatar'; %></td>
-            <td>Alex</td>
-            <td><strong><%= rand(1..1000)%></strong></td>
-            <td><%= rand(1..100)%>%</td>
-            <td><%= rand(1..1000)%></td>
-          </tbody>
-          <tbody>
-            <td>3</td>
-            <td><%= image_tag 'clown.png' , class: 'avatar'; %></td>
-            <td>Bruno</td>
-            <td><strong><%= rand(1..1000)%></strong></td>
-            <td><%= rand(1..100)%>%</td>
-            <td><%= rand(1..1000)%></td>
-          </tbody>
-          <tbody>
-            <td>4</td>
-            <td><%= image_tag 'clown.png' , class: 'avatar'; %></td>
-            <td>Mathieu</td>
-            <td><strong><%= rand(1..1000)%></strong></td>
-            <td><%= rand(1..100)%>%</td>
-            <td><%= rand(1..1000)%></td>
-          </tbody>
-          <tbody>
-            <td>5</td>
-            <td><%= image_tag 'clown.png' , class: 'avatar'; %></td>
-            <td>Yass</td>
-            <td><strong><%= rand(1..1000)%> </strong></td>
-            <td>41%</td>
-            <td><%= rand(1..1000)%></td>
-          </tbody>
-          <tbody>
-            <td>6</td>
-            <td><%= image_tag 'clown.png' , class: 'avatar'; %></td>
-            <td>Thomas</td>
-            <td><strong><%= rand(1..1000)%> </strong></td>
-            <td>41%</td>
-            <td><%= rand(1..1000)%></td>
-          </tbody>
-          <tbody>
-            <td>7</td>
-            <td><%= image_tag 'clown.png' , class: 'avatar'; %></td>
-            <td>Max</td>
-            <td><strong><%= rand(1..1000)%> </strong></td>
-            <td>41%</td>
-            <td><%= rand(1..1000)%></td>
-          </tbody>
-          <tbody>
-            <td>8</td>
-            <td><%= image_tag 'clown.png' , class: 'avatar'; %></td>
-            <td>Sylvain</td>
-            <td><strong><%= rand(1..1000)%> </strong></td>
-            <td>41%</td>
-            <td><%= rand(1..1000)%></td>
-          </tbody>
-          <tbody>
-            <td>9</td>
-            <td><%= image_tag 'clown.png' , class: 'avatar'; %></td>
-            <td>Bertrand</td>
-            <td><strong><%= rand(1..1000)%> </strong></td>
-            <td>41%</td>
-            <td><%= rand(1..1000)%></td>
-          </tbody>
-          <tbody>
-            <td>10</td>
-            <td><%= image_tag 'clown.png' , class: 'avatar'; %></td>
-            <td>Marion</td>
-            <td><strong><%= rand(1..1000)%> </strong></td>
-            <td>41%</td>
-            <td><%= rand(1..1000)%></td>
-          </tbody>
-          <tbody>
-            <td>11</td>
-            <td><%= image_tag 'clown.png' , class: 'avatar'; %></td>
-            <td>Marie</td>
-            <td><strong><%= rand(1..1000)%> </strong></td>
-            <td>41%</td>
-            <td><%= rand(1..1000)%></td>
-          </tbody>
-          <tbody>
-            <td>12</td>
-            <td><%= image_tag 'clown.png' , class: 'avatar'; %></td>
-            <td>Jonh</td>
-            <td><strong><%= rand(1..1000)%> </strong></td>
-            <td>41%</td>
-            <td><%= rand(1..1000)%></td>
-          </tbody>
-          <tbody>
-            <td>13</td>
-            <td><%= image_tag 'clown.png' , class: 'avatar'; %></td>
-            <td>François</td>
-            <td><strong><%= rand(1..1000)%> </strong></td>
-            <td>41%</td>
-            <td><%= rand(1..1000)%></td>
-          </tbody>
+          <% @users.each do |user| %>
+            <tbody>
+              <td>1</td>
+              <td>
+                <div>
+                  <%= render "shared/avatar", user: user, size: "medium" %>
+                </div>
+              <td><%= user.user_name %></td>
+              <td><strong><%= rand(1..1000)%></strong></td>
+              <td>41%</td>
+              <td><%= rand(1..1000)%></td>
+            </tbody>
+          <% end %>
         </table>
       </div>
     </div>
