@@ -1,4 +1,14 @@
 
+.div-scroll {
+  width: auto;
+  height: 600px;
+  overflow: scroll;
+  overflow-x: visible;
+  margin-bottom: 100px;
+}
+
+
+
 .wrapperuser {
   background: $gradient;
   position: relative;
