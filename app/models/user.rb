@@ -53,4 +53,6 @@ class User < ApplicationRecord
   def percentage_off
     ((winnings.count.fdiv(user_choices.count)) * 100).round
   end
+
+
 end
