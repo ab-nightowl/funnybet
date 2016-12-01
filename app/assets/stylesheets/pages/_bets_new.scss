@@ -5,6 +5,10 @@
   padding-right: 50px;
 }
 
+.text-size {
+  font-size: 20px;
+}
+
 .padded-h2 {
   padding-bottom: 25px;
 
@@ -20,16 +24,39 @@
   padding-bottom: 10px;
 }
 
+.body-bet {
+  background-color: #e3e7ef;
+  color: black;
+  height: 100%;
+}
+
+.bet_new_button {
+  padding: 15px 20px;
+  margin: 5px;
+  background: #F3AC3C !important;
+  color: white !important;
+  font-size: 20px;
+}
+
 .btn-margin {
   margin-top: 50px;
 }
 
-.form_background{
+.form_background {
   background: white;
   min-height: 300px;
   border-top: 3px solid #F3AC3C;
 }
 
-.margin_avatar{
+.beters-container {
+  background-color: white;
+  box-shadow: 5px 3px 5px lightgrey;
+  display: flex;
+  flex-direction: column;
+  min-height: 965px;
+  color: $black;
+}
+
+.margin_avatar {
   margin: 5px;
 }

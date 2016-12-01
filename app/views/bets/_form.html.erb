@@ -2,10 +2,10 @@
 
   <%= simple_form_for @bet do |f| %>
 
-    <div class="row row-margin form_background" >
-      <div class="form-inputs text-decoration padded-text text-center">
+    <div class= "row row-margin form_background text-size" >
+      <div class= "form-inputs text-decoration padded-text text-center">
 
-        <div class="">
+        <div>
           <%= f.input :title, :maxlength => 140, label: "Donne un titre à ton pari" %>
           <%= f.input :description, :maxlength => 140, label: "Pour plus de détails... (si tu veux)" %>
           <%= f.association :category, label: "Catégorie" %>
