@@ -48,7 +48,8 @@
       justify-content: space-around;
       display: flex;
       height: 300px;
-      font-family: 'Josefin Sans', sans-serif;
+      font-family: $base-font;
+      font-weight: 100;
     }
 
     .social-line{
@@ -126,6 +127,7 @@
     .description{
         font-size: 23px;
         font-family: $base-font;
+        font-weight: 100;
         color: white;
     }
 

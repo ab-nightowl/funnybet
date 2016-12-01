@@ -4,6 +4,7 @@
     <p>Créez vos paris sur tout et n'importe quoi et invitez vos amis !</p>
 
     <%= link_to "CRÉER UN PARI", new_bet_path, { class: "banner-wagon-button" } %>
+     <%= link_to "PARIER", bets_path(@bets), { class: "banner-wagon-button" } %>
   </div>
 </div>
 
@@ -44,8 +45,8 @@
       <% Bet.all.each do |bet| %>
         <%= render "shared/bet_card", bet: bet %>
       <% end %>
-      <div class="btn btn-facebook">
-        <%= link_to "Voir tous les paris", bets_path(@bets) %>
+      <div>
+        <%= link_to "Voir tous les paris", bets_path(@bets), { class: "navbar-wagon-item navbar-wagon-button btn" } %>
       </div>
 
   </div>
