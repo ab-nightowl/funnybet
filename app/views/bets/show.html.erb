@@ -50,11 +50,12 @@
 
       <%= simple_form_for @user_choice, url: bet_user_choices_path(@bet), method: :post do |f| %>
         <div class="row row-margin text-center text-align">
-          <div class="odd-background">
-            <p class="placeholder">CÔTES</p>
-            <div class="flex_odd padded-text" id="choices">
 
-              <% if @bet.user == current_user %>
+          <% if @bet.user == current_user %>
+
+            <div class="odd-background-lg">
+              <p class="placeholder">CÔTES</p>
+              <div class="flex_odd padded-text" id="choices">
 
                 <% if @bet.choices.where(winning: true).any? %>
 
@@ -100,10 +101,14 @@
                   </div>
 
                 <% end %>
+              </div>
+            </div>
 
+          <% else %>
 
-              <% else %>
-
+            <div class="odd-background">
+              <p class="placeholder">CÔTES</p>
+              <div class="flex_odd padded-text" id="choices">
                 <% @bet.choices.each do |choice| %>
                   <div class="bet-button">
                     <%= f.radio_button :choice, choice.id %>
@@ -137,8 +142,10 @@
                 </div>
               </div>
               <div class="margin-button">
-                <p>Total gains : <strong><span id="possible-gains"></span></strong></p>
-                <%= f.button :submit, "Parier", class: "navbar-wagon-item navbar-wagon-button btn" %>
+
+                <p>Total gains : <span id="possible-gains"></span></p>
+                <%= f.button :submit, "Parier", class: "banner-wagon-button bet-btn" %>
+
               </div>
             </div>
           </div>

@@ -10,19 +10,23 @@ class Bet < ApplicationRecord
   validates :choices, length: { minimum: 2, message: "Tu dois proposer au moins 2 choix de réponses" }
   validates :category_id, presence: true
 
+  scope :finished, -> { where("finish_at < now()") }
+  scope :ongoing, -> { where("finish_at > now()") }
+
+
   def status
-    if self.finish_at < DateTime.now
-      "finished"
-    else
-      "on_going"
-    end
-  end
+   if self.finish_at < DateTime.now
+     "finished"
+   else
+     "on_going"
+   end
+ end
 
-  def finished?
-    status == "finished"
-  end
+ def finished?
+   status == "finished"
+ end
 
-  def on_going?
-    status == "on_going"
-  end
+ def on_going?
+   status == "on_going"
+ end
 end

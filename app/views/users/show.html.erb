@@ -31,7 +31,7 @@
       <div class="col-xs-12 col-sm-6 col-md-6 borders">
         <h4>En cours</h4>
         <% @bets.each do |bet| %>
-          <% if bet.on_going? %>
+          <% if bet.on_going?  %>
             <% @user_choices.each do |user_choice| %>
               <div class="dashboard-card">
                 "<%= bet.title %>"

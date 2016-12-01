@@ -3,12 +3,21 @@ class UsersController < ApplicationController
   before_action :find_user, only: [:show]
 
   def show
-    user = User.find(params[:id])
-    @bets = Bet.where(user: user) + UserChoice.where(user: user).map { |user_choice| user_choice.choice.bet }
+    created_bets_and_played_bets
+    user_choices
+    bet_choices
+  end
 
-    @user_choices = Bet.where(user: user).map { |bet| bet.user.user_choices }.flatten
+  def created_bets_and_played_bets
+    @bets = Bet.where(user: @user) + UserChoice.where(user: @user).map { |user_choice| user_choice.choice.bet }
+  end
 
-    @bet_choices = Bet.where(user: user).map { |bet| bet.choices }.flatten
+  def user_choices
+    @user_choices = Bet.where(user: @user).map { |bet| bet.user.user_choices }.flatten
+  end
+
+  def bet_choices
+    @bet_choices = Bet.where(user: @user).map { |bet| bet.choices }.flatten
   end
 
   def ranking
@@ -19,17 +28,12 @@ class UsersController < ApplicationController
 
   private
 
-
-
   def find_user
     @user = User.find(params[:id])
   end
 
-
-
-
   def user_params
-  params.require(:user).permit(:user_name, :photo)
+    params.require(:user).permit(:user_name, :photo)
   end
 
 

@@ -18,23 +18,18 @@
     margin-left: auto;
     margin-right: auto;
 
-    .title,
-    .category,
-    .description,
-    .social-line,
-    .content,
-    small,
-    a{
+    .social-line {
+        color: $blue;
         position: relative;
         z-index: 3;
-    }
-
-    a{
-        color: $blue;
+        font-family: 'Nunito', sans-serif;
+        font-size: 20px;
+        font-weight: 400;
 
         &:hover,
-        &:focus{
+        &:focus {
             color: #F3AC3C;
+            cursor: pointer;
         }
     }
 
@@ -127,7 +122,7 @@
     .description{
         font-size: 23px;
         font-family: $base-font;
-        font-weight: 100;
+        font-weight: 300;
         color: white;
     }
 
