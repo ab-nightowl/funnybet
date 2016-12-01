@@ -31,4 +31,27 @@ class User < ApplicationRecord
 
     return user
   end
+
+  def points
+    winning_choices = UserChoice.joins(:user, :choice).where(user: self).where(choices: { winning: true })
+    points = 0
+    winning_choices.each do |winning_choice|
+      points += (winning_choice.choice.gain(winning_choice.bet_amount) - winning_choice.bet_amount)
+    end
+    p = points.to_i - starting_amount.to_i
+    p > 0 ? p : 0
+  end
+
+  def winnings
+    Choice.joins(user_choices: :user).where(choices: { winning: true }).where(user_choices: { user: self })
+  end
+
+  def losings
+    Choice.joins(user_choices: :user).where(choices: { winning: false }).where(user_choices: { user: self })
+  end
+
+  def percentage_off
+    ((winnings.count.fdiv(user_choices.count)) * 100).round
+  end
+
 end

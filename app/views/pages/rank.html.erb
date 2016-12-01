@@ -14,17 +14,17 @@
               <th style="padding-left: 70px";>Nb. paris</th>
             </tr>
           </thead>
-          <% @users.each do |user| %>
+          <% @users.each_with_index do |user, index| %>
             <tbody>
-              <td>1</td>
+              <td><%= index + 1 %></td>
               <td>
                 <div>
                   <%= render "shared/avatar", user: user, size: "medium" %>
                 </div>
               <td><%= user.user_name %></td>
-              <td><strong><%= rand(1..1000)%></strong></td>
-              <td>41%</td>
-              <td><%= rand(1..1000)%></td>
+              <td><strong><%= user.points  %></strong></td>
+              <td><%= user.percentage_off %>%</td>
+              <td><%= user.user_choices.count%></td>
             </tbody>
           <% end %>
         </table>
