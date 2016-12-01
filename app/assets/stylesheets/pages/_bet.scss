@@ -20,12 +20,14 @@
   background: white;
   min-height: 300px;
   border-top: 3px solid #F3AC3C;
+  box-shadow: 5px 3px 5px lightgrey;
 }
 
 .challenge_background{
   background: white;
   min-height: 200px;
   border-top: 3px solid #F3AC3C;
+  box-shadow: 5px 3px 5px lightgrey;
 }
 
 .bet_amount_background{
@@ -33,12 +35,14 @@
   min-height: 100px;
   padding: 15px;
   border-top: 3px solid #F3AC3C;
+  box-shadow: 5px 3px 5px lightgrey;
 }
 
 
 .deadline{
   background-color: white;
   border-top: 3px solid #F3AC3C;
+  box-shadow: 5px 3px 5px lightgrey;
 }
 
 .profile-container {
@@ -59,23 +63,33 @@
   display: flex;
   flex-direction: column;
 
-  min-height: 200px;
+  min-height: 590.5px;
   color: black;
   border-top: 3px solid #F3AC3C;
 }
 
 
-.odd-background{
+.odd-background {
   background-color: white;
   min-height: 200px;
   padding: 15px;
   border-top: 3px solid #F3AC3C;
   position: relative;
+  box-shadow: 5px 3px 5px lightgrey;
+}
+
+.odd-background-lg {
+  background-color: white;
+  min-height: 300px;
+  padding: 15px;
+  border-top: 3px solid #F3AC3C;
+  position: relative;
+  box-shadow: 5px 3px 5px lightgrey;
 }
 
 #validate-bet-div {
   position: absolute;
-  left: 355px;
+  left: 354.5px;
   bottom: 35px;
 }
 
@@ -89,14 +103,6 @@
   display: flex;
   justify-content: space-around;
   flex-direction: row;
-}
-
-
-
-.choices-background{
-  background: white;
-  min-height: 300px;
-  border-top: 3px solid #F3AC3C;
 }
 
 .placeholder{
