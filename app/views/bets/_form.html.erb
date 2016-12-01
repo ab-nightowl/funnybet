@@ -6,8 +6,8 @@
       <div class="form-inputs text-decoration padded-text text-center">
 
         <div class="">
-          <%= f.input :title, label: "Donne un titre à ton pari" %>
-          <%= f.input :description, label: "Pour plus de détails... (si tu veux)" %>
+          <%= f.input :title, :maxlength => 140, label: "Donne un titre à ton pari" %>
+          <%= f.input :description, :maxlength => 140, label: "Pour plus de détails... (si tu veux)" %>
           <%= f.association :category, label: "Catégorie" %>
         </div>
 
