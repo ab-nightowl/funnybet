@@ -49,41 +49,99 @@
       <%= simple_form_for @user_choice, url: bet_user_choices_path(@bet), method: :post do |f| %>
         <div class="row row-margin text-center text-align">
           <div class="odd-background">
-          <p class="placeholder">CÔTES</p>
+            <p class="placeholder">CÔTES</p>
             <div class="flex_odd padded-text" id="choices">
-              <% @bet.choices.each do |choice| %>
-                <div class="bet_button">
-                  <%= f.radio_button :choice, choice.id %>
-                  <label for="user_choice_choice_<%= choice.id %>">
-                    <i class="fa fa-check"></i>
-                    <%= choice.title %>
-                  </label>
-                    <p><%= choice.odd %></p>
-                </div>
+
+              <% if @bet.user == current_user %>
+
+                <% if @bet.choices.where(winning: true).any? %>
+
+                  <% @bet.choices.each do |choice| %>
+
+                    <% if choice.is_winning? %>
+                      <!-- Je veux que le choix validé reste 'check' -->
+                      <div class="bet-button-winning">
+                        <div>
+                          <i class="fa fa-check"></i>
+                          <%= choice.title %>
+                        </div>
+                        <p><%= choice.odd %></p>
+                      </div>
+
+                    <% else %>
+
+                      <div class="bet-button-losing">
+                        <div>
+                          <%= choice.title %>
+                        </div>
+                        <p><%= choice.odd %></p>
+                      </div>
+
+                    <% end %>
+                  <% end %>
+
+                <% else %>
+
+                  <% @bet.choices.each do |choice| %>
+                    <div class="bet-button">
+                      <%= f.radio_button :choice, choice.id %>
+                      <label for="user_choice_choice_<%= choice.id %>">
+                        <i class="fa fa-check"></i>
+                        <%= choice.title %>
+                      </label>
+                        <p><%= choice.odd %></p>
+                    </div>
+                  <% end %>
+
+                  <div id="validate-bet-div">
+                    <%= f.button :submit, "Valider le pari", class: "banner-wagon-button bet-btn" %>
+                  </div>
+
+                <% end %>
+
+
+              <% else %>
+
+                <% @bet.choices.each do |choice| %>
+                  <div class="bet-button">
+                    <%= f.radio_button :choice, choice.id %>
+                    <label for="user_choice_choice_<%= choice.id %>">
+                      <i class="fa fa-check"></i>
+                      <%= choice.title %>
+                    </label>
+                      <p><%= choice.odd %></p>
+                  </div>
+                <% end %>
+
               <% end %>
             </div>
           </div>
         </div>
-        <div class="row bet_amount_background text-center">
-          <div class="padded-text">
-          <p class="placeholder">MISE</p>
-            <br>
-            <div class="input-group spinner">
-              <div class="input-group-btn">
-               <%= link_to "-", "#", class: "btn btn-warning spinner-minus" %>
+
+        <% if @bet.user != current_user %>
+
+          <div class="row bet_amount_background text-center">
+            <div class="padded-text">
+              <p class="placeholder">MISE</p>
+              <br>
+              <div class="input-group spinner">
+                <div class="input-group-btn">
+                 <%= link_to "-", "#", class: "btn btn-warning spinner-minus" %>
+                </div>
+                <%= f.text_field :bet_amount, class: "form-control" %>
+                <div class="input-group-btn">
+                  <%= link_to "+", "#", class: "btn btn-success spinner-plus" %>
+                  <%= link_to "ALL IN", "#", class: "btn btn-default spinner-all-in" %>
+                </div>
               </div>
-              <%= f.text_field :bet_amount, class: "form-control" %>
-              <div class="input-group-btn">
-                <%= link_to "+", "#", class: "btn btn-success spinner-plus" %>
-                <%= link_to "ALL IN", "#", class: "btn btn-default spinner-all-in" %>
+              <div class="margin-button">
+                <p>Total gains : <strong><span id="possible-gains"></span></strong></p>
+                <%= f.button :submit, "Parier", class: "navbar-wagon-item navbar-wagon-button btn" %>
               </div>
-            </div>
-            <div class="margin-button">
-             <p>Total gains : <strong><span id="possible-gains"></span></strong></p>
-              <%= f.button :submit, "Parier", class: "navbar-wagon-item navbar-wagon-button btn" %>
             </div>
           </div>
-        </div>
+        <% end %>
+
       <% end %>
     </div>
   </div>

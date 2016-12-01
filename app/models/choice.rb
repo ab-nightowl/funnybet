@@ -40,4 +40,13 @@ class Choice < ApplicationRecord
   def loss?
     winning_status == "loss"
   end
+
+  def is_winning?
+    self.winning
+  end
+
+  def set_as_winning!
+    self.winning = true
+    self.save
+  end
 end

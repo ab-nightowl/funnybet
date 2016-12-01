@@ -1,4 +1,7 @@
-.bet_button {
+.bet-button {
+  flex: 0 0 20%;
+  align-items: center;
+  margin-top: 15px;
 
   input {
     display: none;
@@ -20,5 +23,45 @@
     i {
       display: inline;
     }
+  }
+}
+
+.bet-button-winning {
+  flex: 0 0 20%;
+  align-items: center;
+  margin-top: 15px;
+
+  div {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+
+    color: white;
+    background: green;
+    border: 1px solid #ccc;
+    padding: 15px 20px;
+
+    i {
+      display: inline;
+    }
+  }
+}
+
+.bet-button-losing {
+  flex: 0 0 20%;
+  align-items: center;
+  margin-top: 15px;
+
+  div {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 15px 20px;
   }
 }

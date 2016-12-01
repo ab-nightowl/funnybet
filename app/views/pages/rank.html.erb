@@ -16,7 +16,7 @@
           </thead>
           <tbody>
             <td>1</td>
-            <td> <%= image_tag 'clown.png' , class: 'avatar'; %></td>
+            <td><%= render "shared/avatar", user: current_user, size: "large" %></td>
             <td>Julien</td>
             <td><strong><%= rand(1..1000)%></strong></td>
             <td>41%</td>
