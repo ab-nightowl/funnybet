@@ -4,7 +4,7 @@
     <%= render "shared/avatar", user: current_user, size: "large" %>
     <br>
     <li><%= @user.user_name %></li>
-    <li><strong> Pts</strong></li>
+    <li><strong> <%= @user.points %> Pts</strong></li>
     <br>
     <div>
       <% if @user == current_user %>
@@ -95,7 +95,7 @@
         <% @bets.each do |bet| %>
           <% @user_choices.each do |user_choice| %>
             <% @bet_choices.each do |bet_choice| %>
-                <% if bet.finished? && (user_choice == !bet_choice.winning) %>
+                <% if bet.finished? && (user_choice == !bet_choice.is_winning?) %>
                   <% if bet.user != current_user %>
                     <div class="dashboard-card-finish">
                       "<%= bet.title %>"
