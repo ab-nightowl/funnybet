@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     created_bets_and_played_bets
     user_choices
     bet_choices
+    @ranking_users = User.order(:starting_amount).reverse
   end
 
   def created_bets_and_played_bets
@@ -33,7 +34,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:user_name, :photo)
+    params.require(:user).permit(:user_name, :photo, :starting_amount)
   end
 
 
