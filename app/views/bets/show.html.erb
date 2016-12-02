@@ -152,7 +152,11 @@
                 <div class="margin-button">
 
                   <p>Total gains : <span id="possible-gains"></span></p>
-                  <%= f.button :submit, "Parier", class: "banner-wagon-button bet-btn" %>
+                  <% if current_user %>
+                    <%= f.button :submit, "Parier", class: "banner-wagon-button bet-btn" %>
+                    <% else %>
+                    <%= link_to "Se connecter pour parier", new_user_registration_path %>
+                  <% end %>
 
                 </div>
               </div>
