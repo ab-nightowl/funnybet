@@ -52,8 +52,8 @@ class User < ApplicationRecord
   def points
     points = 0
 
-    winning_choices = UserChoice.joins(:user, :choice).where(user: self).where(choices: { winning: true })
-    winning_choices.each do |winning_choice|
+    winnings_choices = UserChoice.joins(:user, :choice).where(user: self).where(choices: { winning: true })
+    winnings_choices.each do |winning_choice|
       points += (winning_choice.choice.gain(winning_choice.bet_amount) - winning_choice.bet_amount)
     end
 
@@ -64,6 +64,17 @@ class User < ApplicationRecord
 
     p = points.to_i + starting_amount.to_i
     p > 0 ? p : 0
+  end
+
+  def winning_choices
+    UserChoice.joins(:user, :choice).where(user: self).where(choices: { winning: true })
+  end
+
+  def losing_choices
+    UserChoice.joins(:user, :choice).where(user: self).where(choices: { winning: false })
+  end
+
+  def losing
   end
 
   def winnings
@@ -79,5 +90,9 @@ class User < ApplicationRecord
     ((winnings.count.fdiv(user_choices.count)) * 100).round
   end
 
+  # def winning_bets
+  #   bet_ids = winnings.pluck(:bet_id)
+  #   Bet.find(bet_ids)
+  # end
 
 end
