@@ -58,6 +58,7 @@ class User < ApplicationRecord
   end
 
   def percentage_off
+    return 0 unless user_choices.any?
     ((winnings.count.fdiv(user_choices.count)) * 100).round
   end
 
