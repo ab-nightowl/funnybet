@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @choices = @user.user_choices
     @winning_choices = @user.winning_choices
     @losing_choices = @user.losing_choices
-    @ranking_users = User.order(:starting_amount).reverse
+    @ranking_users = User.all.sort_by { |user| user.points}.reverse
   end
 
   def created_bets_and_played_bets
