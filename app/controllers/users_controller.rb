@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   end
 
   def user_choices
-    @user_choices = Bet.where(user: @user).map { |bet| bet.user.user_choices }.flatten
+    @user_choices = @bets.map { |bet| bet.user.user_choices }.flatten
   end
 
   def bet_choices

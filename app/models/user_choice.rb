@@ -4,6 +4,7 @@ class UserChoice < ApplicationRecord
 
   validates :choice, :user, presence: true
 
+
   def bet
     choice.bet
   end

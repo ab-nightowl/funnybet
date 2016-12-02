@@ -46,27 +46,27 @@
       <div class="col-xs-12 col-sm-6 col-md-6 borders">
         <h4>Terminés</h4>
         <div class="div-scroll">
-        <% @bets.each do |bet| %>
-          <% if bet.finished? %>
-            <% if bet.user == current_user %>
-              <div class="dashboard-card-finish">
-                "<%= bet.title %>"
-                <p> <%= link_to 'Valider le pari', bet_path(bet), class: "btn btn-dashboard"%> </p>
-                <div class="texthelp">
-                  <p>Vous devez valider votre pari en donnant son résultat</p>
-                </div>
-              </div>
-            <% else %>
-              <% @user_choices.each do |user_choice| %>
-                <div class="dashboard-card">
+          <% @bets.each do |bet| %>
+            <% if bet.finished? %>
+              <% if bet.user == current_user %>
+                <div class="dashboard-card-finish">
                   "<%= bet.title %>"
-                  <li><%= user_choice.bet_amount %> Pts misé(s)</li>
+                  <p> <%= link_to 'Valider le pari', bet_path(bet), class: "btn btn-dashboard"%> </p>
+                  <div class="texthelp">
+                    <p>Vous devez valider votre pari en donnant son résultat</p>
+                  </div>
                 </div>
+              <% else %>
+                <% @user_choices.each do |user_choice| %>
+                  <div class="dashboard-card">
+                    "<%= bet.title %>"
+                    <li><%= user_choice.bet_amount %> Pts misé(s)</li>
+                  </div>
+                <% end %>
               <% end %>
             <% end %>
           <% end %>
-        <% end %>
-      </div>
+        </div>
       </div>
     </div>
   </div>
@@ -85,10 +85,12 @@
       <div class="col-xs-12 col-sm-6 col-md-3 borders">
         <h4>Paris perdus</h4>
         <% @losing_choices.each do |losing_choice| %>
-          <div class="dashboard-card-finish">
-            "<%= losing_choice.bet.title %>"
-            <li><%= losing_choice.bet_amount %> Pts misé(s)</li>
-          </div>
+          <% if losing_choice.bet.finished? %>
+            <div class="dashboard-card-finish">
+              "<%= losing_choice.bet.title %>"
+              <li><%= losing_choice.bet_amount %> Pts misé(s)</li>
+            </div>
+          <% end %>
         <% end %>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-3 borders">
