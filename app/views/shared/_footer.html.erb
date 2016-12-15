@@ -2,11 +2,11 @@
   <div class="footer-left">
     <p class="footer-links">
       <ul class="list-inline">
-        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Accueil", root_path %></li>
         <% if current_user %>
-          <li><%= link_to "My profile", user_path(current_user) %></li>
+          <li><%= link_to "Mon profil", user_path(current_user) %></li>
         <% else %>
-          <li><%= link_to "My profile", new_user_session_path %></li>
+          <li><%= link_to "Mon profil", new_user_session_path %></li>
         <% end %>
       </ul>
     </p>

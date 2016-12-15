@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def home
   end
+
   def rank
     @users = User.all.sort_by { |user| user.points}.reverse
   end

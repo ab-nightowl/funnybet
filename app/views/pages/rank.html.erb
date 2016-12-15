@@ -19,9 +19,9 @@
               <td><%= index + 1 %></td>
               <td>
                 <div>
-                  <%= render "shared/avatar", user: user, size: "medium" %>
+                  <%= link_to((render "shared/avatar", user: user, size: "medium"), user_path(user)) %>
                 </div>
-              <td><%= user.user_name %></td>
+              <td><%= link_to user.user_name, user_path(user), html_options = {class: "none"} %></td>
               <td><strong><%= user.points  %></strong></td>
               <td><%= user.percentage_off %>%</td>
               <td><%= user.user_choices.count%></td>
