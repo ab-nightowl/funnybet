@@ -3,3 +3,28 @@
   margin-bottom: 10px;
   margin-top: 15px;
 }
+
+.divider {
+  border-top: 1px solid #d9dadc;
+  display: block;
+  line-height: 1px;
+  margin: 22px 0;
+  text-align: center;
+}
+
+.divider-title {
+  background: #fff;
+  font-size: 12px;
+  letter-spacing: 1px;
+  padding: 0 20px;
+  text-transform: uppercase;
+}
+
+.divider-margin-top {
+  margin-top: 22px;
+}
+
+.header-smaller {
+  font-size: 22px;
+  line-height: 30px;
+}

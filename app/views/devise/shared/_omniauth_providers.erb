@@ -1,10 +1,23 @@
 <% if devise_mapping.omniauthable? %>
   <div class="social-share-button">
+
     <div class="social-connect-button">
-      <%= link_to "", user_facebook_omniauth_authorize_path, class: 'ssb-icon ssb-facebook', id: 'scb-facebook-icon' %>
+
+      <%= link_to(user_facebook_omniauth_authorize_path, class: "ssb-icon", id: 'scb-facebook-link') do %>
+        <div class="link-flexbox">
+          <span class="facebook-flex-icon text-center"><i class="fa fa-facebook"></i></span><span class="facebook-flex-text text-center">Continuer avec Facebook</span>
+        </div>
+      <% end %>
     </div>
+
     <div class="social-connect-button">
-      <%= link_to "", user_twitter_omniauth_authorize_path, class: 'ssb-icon ssb-twitter', id: 'scb-twitter-icon' %>
+
+      <%= link_to(user_twitter_omniauth_authorize_path, class: "ssb-icon", id: 'scb-twitter-link') do %>
+        <div class="link-flexbox">
+          <span class="twitter-flex-icon text-center"><i class="fa fa-twitter"></i></span><span class="twitter-flex-text text-center">Continuer avec Twitter</span>
+        </div>
+      <% end %>
     </div>
+
   </div>
 <% end %>
